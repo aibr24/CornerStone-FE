@@ -1,50 +1,49 @@
 import React, { useState } from "react";
-import { View, Text, TextInput } from "react-native";
-import authStore from "../../Stores/authStore";
-import { Button } from "native-base";
 
-const Signup = ({ navigation }) => {
+//Styles
+import {
+  AuthContainer,
+  AuthTitle,
+  AuthTextInput,
+  AuthButton,
+  AuthButtonText,
+  AuthOther,
+} from "./styles";
+import authStore from "../../stores/authStore";
+import { observer } from "mobx-react";
+
+function Signin({ navigation }) {
   const [user, setUser] = useState({
     username: "",
-    firstName: "",
-    lastName: "",
-    email: "",
     password: "",
   });
 
-  // const handleSubmit = () => {
-  //   if (authStore.signup(user)) {
-  //     navigation.replace("Home");
-  //   }
-  // };
+  const handleSubmit = async () => {
+    await authStore.signin(user);
+    if (authStore.user) navigation.replace("Home");
+  };
   return (
-    <View>
-      <Text>Sign Up</Text>
-      <TextInput
-        placeholder="Username"
+    <AuthContainer>
+      <AuthTitle>Signin</AuthTitle>
+      <AuthTextInput
         onChangeText={(username) => setUser({ ...user, username })}
+        placeholder="Username"
+        placeholderTextColor="#A6AEC1"
       />
-      <TextInput
-        placeholder="First Name"
-        onChangeText={(firstName) => setUser({ ...user, firstName })}
-      />
-      <TextInput
-        placeholder="Last Name"
-        onChangeText={(lastName) => setUser({ ...user, lastName })}
-      />
-      <TextInput
-        placeholder="Email"
-        onChangeText={(email) => setUser({ ...user, email })}
-      />
-      <TextInput
-        placeholder="Password"
+      <AuthTextInput
         onChangeText={(password) => setUser({ ...user, password })}
+        placeholder="Password"
+        placeholderTextColor="#A6AEC1"
+        secureTextEntry={true}
       />
-      <Button>
-        <Text>Submit</Text>
-      </Button>
-    </View>
+      <AuthButton onPress={handleSubmit}>
+        <AuthButtonText>Sign in</AuthButtonText>
+      </AuthButton>
+      <AuthOther onPress={() => navigation.navigate("Signup")}>
+        Click here to register!
+      </AuthOther>
+    </AuthContainer>
   );
-};
+}
 
-export default Signup;
+export default observer(Signin);

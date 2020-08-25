@@ -1,39 +1,64 @@
 import React, { useState } from "react";
-import { View, Text, TextInput } from "react-native";
-import authStore from "../../Stores/authStore";
-import { Button } from "native-base";
-import { observer } from "mobx-react";
 
-const Signin = ({ navigation }) => {
+//Styles
+import {
+  AuthContainer,
+  AuthTitle,
+  AuthTextInput,
+  AuthButton,
+  AuthButtonText,
+  AuthOther,
+} from "./styles";
+//Stores
+import authStore from "../../stores/authStore";
+
+function Signup({ navigation }) {
   const [user, setUser] = useState({
     username: "",
+    firstName: "",
+    lastName: "",
+    email: "",
     password: "",
   });
 
-  // const handleSubmit = () => {
-  //   authStore.signin(user);
-  //   if (authStore.user) {
-  //     navigation.goBack();
-  //   }
-  // };
+  const handleSubmit = () => {
+    authStore.signup(user);
+    if (authStore.user) navigation.replace("Home");
+  };
   return (
-    <View>
-      <Text>Sign In</Text>
-      <TextInput
-        placeholder="Username"
-        autoCapitalize="none"
+    <AuthContainer>
+      <AuthTitle>Signup</AuthTitle>
+      <AuthTextInput
         onChangeText={(username) => setUser({ ...user, username })}
+        placeholder="Username"
+        placeholderTextColor="#A6AEC1"
       />
-      <TextInput
-        placeholder="Password"
-        autoCapitalize="none"
+      <AuthTextInput
         onChangeText={(password) => setUser({ ...user, password })}
+        placeholder="Password"
+        placeholderTextColor="#A6AEC1"
+        secureTextEntry={true}
       />
-      <Button >
-        <Text>Submit</Text>
-      </Button>
-    </View>
+      <AuthTextInput
+        onChangeText={(firstName) => setUser({ ...user, firstName })}
+        placeholder="First Name"
+        placeholderTextColor="#A6AEC1"
+      />
+      <AuthTextInput
+        onChangeText={(lastName) => setUser({ ...user, lastName })}
+        placeholder="Last Name"
+        placeholderTextColor="#A6AEC1"
+      />
+      <AuthTextInput
+        onChangeText={(email) => setUser({ ...user, email })}
+        placeholder="Email@example.com"
+        placeholderTextColor="#A6AEC1"
+      />
+      <AuthButton onPress={handleSubmit}>
+        <AuthButtonText>Sign up</AuthButtonText>
+      </AuthButton>
+      <AuthOther>Click here to register!</AuthOther>
+    </AuthContainer>
   );
-};
-
-export default observer(Signin);
+}
+export default Signup;
