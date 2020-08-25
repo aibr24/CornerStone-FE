@@ -1,12 +1,21 @@
 import React from "react";
 import { View, Text } from "react-native";
-
+import tripStore from "../../stores/tripStore";
+import TripItem from "./TripItem";
+import { Content, List } from "native-base";
+import { observer } from "mobx-react";
+import trip from "../../data";
 const TripList = () => {
+  //
+  const listoftrips = tripStore.trips.map((item) => (
+    <TripItem trip={item} key={item.id} />
+  ));
+
   return (
-    <View>
-      <Text>**tripItem</Text>
-    </View>
+    <Content>
+      <List>{listoftrips}</List>
+    </Content>
   );
 };
 
-export default TripList;
+export default observer(TripList);
