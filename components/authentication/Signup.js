@@ -3,7 +3,7 @@ import { View, Text, TextInput } from "react-native";
 import authStore from "../../Stores/authStore";
 import { Button } from "native-base";
 
-const Singup = ({ navigation }) => {
+const Signup = ({ navigation }) => {
   const [user, setUser] = useState({
     username: "",
     firstName: "",
@@ -47,4 +47,4 @@ const Singup = ({ navigation }) => {
   );
 };
 
-export default Singup;
+export default Signup;

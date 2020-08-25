@@ -1,13 +1,15 @@
-import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import RootNav from "./components/Navigation";
+import { registerRootComponent } from "expo";
 
-export default function App() {
+function App() {
   return (
     <NavigationContainer>
       <RootNav />
     </NavigationContainer>
   );
 }
+
+registerRootComponent(App);
+export default App;
