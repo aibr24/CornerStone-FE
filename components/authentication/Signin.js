@@ -10,12 +10,12 @@ const Signin = ({ navigation }) => {
     password: "",
   });
 
-  const handleSubmit = () => {
-    authStore.signin(user);
-    if (authStore.user) {
-      navigation.goBack();
-    }
-  };
+  // const handleSubmit = () => {
+  //   authStore.signin(user);
+  //   if (authStore.user) {
+  //     navigation.goBack();
+  //   }
+  // };
   return (
     <View>
       <Text>Sign In</Text>
@@ -29,7 +29,7 @@ const Signin = ({ navigation }) => {
         autoCapitalize="none"
         onChangeText={(password) => setUser({ ...user, password })}
       />
-      <Button onPress={() => handleSubmit()}>
+      <Button >
         <Text>Submit</Text>
       </Button>
     </View>

@@ -12,11 +12,11 @@ const Singup = ({ navigation }) => {
     password: "",
   });
 
-  const handleSubmit = () => {
-    if (authStore.signup(user)) {
-      navigation.replace("Home");
-    }
-  };
+  // const handleSubmit = () => {
+  //   if (authStore.signup(user)) {
+  //     navigation.replace("Home");
+  //   }
+  // };
   return (
     <View>
       <Text>Sign Up</Text>
@@ -40,7 +40,7 @@ const Singup = ({ navigation }) => {
         placeholder="Password"
         onChangeText={(password) => setUser({ ...user, password })}
       />
-      <Button onPress={handleSubmit}>
+      <Button>
         <Text>Submit</Text>
       </Button>
     </View>
