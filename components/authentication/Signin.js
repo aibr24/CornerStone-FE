@@ -9,25 +9,22 @@ import {
   AuthButtonText,
   AuthOther,
 } from "./styles";
-//Stores
 import authStore from "../../stores/authStore";
+import { observer } from "mobx-react";
 
-function Signup({ navigation }) {
+function Signin({ navigation }) {
   const [user, setUser] = useState({
     username: "",
-    firstName: "",
-    lastName: "",
-    email: "",
     password: "",
   });
 
-  const handleSubmit = () => {
-    authStore.signup(user);
-    if (authStore.user) navigation.replace("Home");
+  const handleSubmit = async () => {
+    await authStore.signin(user);
+    if (authStore.user) navigation.replace("Trips");
   };
   return (
     <AuthContainer>
-      <AuthTitle>Signup</AuthTitle>
+      <AuthTitle>Signin</AuthTitle>
       <AuthTextInput
         onChangeText={(username) => setUser({ ...user, username })}
         placeholder="Username"
@@ -39,26 +36,14 @@ function Signup({ navigation }) {
         placeholderTextColor="#A6AEC1"
         secureTextEntry={true}
       />
-      <AuthTextInput
-        onChangeText={(firstName) => setUser({ ...user, firstName })}
-        placeholder="First Name"
-        placeholderTextColor="#A6AEC1"
-      />
-      <AuthTextInput
-        onChangeText={(lastName) => setUser({ ...user, lastName })}
-        placeholder="Last Name"
-        placeholderTextColor="#A6AEC1"
-      />
-      <AuthTextInput
-        onChangeText={(email) => setUser({ ...user, email })}
-        placeholder="Email@example.com"
-        placeholderTextColor="#A6AEC1"
-      />
       <AuthButton onPress={handleSubmit}>
-        <AuthButtonText>Sign up</AuthButtonText>
+        <AuthButtonText>Sign in</AuthButtonText>
       </AuthButton>
-      <AuthOther>Click here to register!</AuthOther>
+      <AuthOther onPress={() => navigation.navigate("Signup")}>
+        Click here to register!
+      </AuthOther>
     </AuthContainer>
   );
 }
-export default Signup;
+
+export default observer(Signin);
