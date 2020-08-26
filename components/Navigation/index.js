@@ -4,6 +4,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import Signin from "../authentication/Signin";
 import Singup from "../authentication/Signup";
 import TripList from "../TripList";
+import SignoutButton from "../buttons/SignoutButton";
 
 const { Navigator, Screen } = createStackNavigator();
 
@@ -23,7 +24,11 @@ const RootNav = () => {
     >
       <Screen name="Signin" component={Signin} />
       <Screen name="Signup" component={Singup} />
-      <Screen name="Trips" component={TripList} />
+      <Screen
+        name="Trips"
+        component={TripList}
+        options={{ headerRight: () => <SignoutButton /> }}
+      />
     </Navigator>
   );
 };

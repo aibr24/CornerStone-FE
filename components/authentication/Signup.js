@@ -23,8 +23,9 @@ function Signup({ navigation }) {
 
   const handleSubmit = () => {
     authStore.signup(user);
-    if (authStore.user) navigation.replace("Home");
+    if (authStore.user) navigation.replace("Trips");
   };
+  
   return (
     <AuthContainer>
       <AuthTitle>Signup</AuthTitle>
