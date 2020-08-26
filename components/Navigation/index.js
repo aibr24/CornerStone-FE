@@ -1,10 +1,12 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text } from "react-native"; // remove unused imports
 import { createStackNavigator } from "@react-navigation/stack";
 import Signin from "../authentication/Signin";
 import Singup from "../authentication/Signup";
 import TripList from "../TripList";
 import SignoutButton from "../buttons/SignoutButton";
+
+// clean up imports
 
 const { Navigator, Screen } = createStackNavigator();
 

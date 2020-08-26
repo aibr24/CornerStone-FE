@@ -25,11 +25,12 @@ function Signup({ navigation }) {
     authStore.signup(user);
     if (authStore.user) navigation.replace("Trips");
   };
-  
+
   return (
     <AuthContainer>
       <AuthTitle>Signup</AuthTitle>
       <AuthTextInput
+        // same comment....
         onChangeText={(username) => setUser({ ...user, username })}
         placeholder="Username"
         autoCapitalize="none"

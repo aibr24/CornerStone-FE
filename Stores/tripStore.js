@@ -1,5 +1,6 @@
 import { decorate, observable } from "mobx";
 import instance from "./instance";
+// remove unused imports
 import decode from "jwt-decode";
 import AsyncStorage from "@react-native-community/async-storage";
 
@@ -38,7 +39,7 @@ class TripStore {
     try {
       await instance.delete(`/trips/${tripId}`);
       this.trips = this.trips.filter((trip) => trip.id !== tripId);
-      console.log(tripId);
+      console.log(tripId); // remove unnecessary console logs
     } catch (error) {
       console.log("TRIP-STORE >> deleteTrip() --->", error);
     }

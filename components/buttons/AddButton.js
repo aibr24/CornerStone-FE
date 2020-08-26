@@ -7,7 +7,9 @@ import {
   AddTextInput,
 } from "./styles";
 import tripStore from "../../stores/tripStore";
-import authStore from "../../stores/authStore";
+import authStore from "../../stores/authStore"; // unused import
+
+// clean up imports
 
 const AddButton = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,17 +21,19 @@ const AddButton = () => {
     details: "",
     image: "",
   });
-  console.log(newTrip);
+  console.log(newTrip); // remove console logs from master
 
   const submitTrip = () => {
     tripStore.createTrip(newTrip);
     closeModal();
   };
+
   return (
     <View>
       <Modal animationType="slide" transparent={true} visible={isOpen}>
         <AddModalContainer>
           <AddTextInput
+            /* all these onChangeTexts are the same, create a method handler and reuse it here */
             onChangeText={(title) => setNewTrip({ ...newTrip, title })}
             placeholder="Title"
             placeholderTextColor="#A6AEC1"

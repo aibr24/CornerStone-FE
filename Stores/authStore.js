@@ -15,7 +15,7 @@ class AuthStore {
   signup = async (userData) => {
     try {
       const res = await instance.post("/signup", userData);
-      this.setUser(res.data.token);
+      this.setUser(res.data.token); // this line needs an await
     } catch (error) {
       console.log("AuthStore -> signup -> error", error);
     }
@@ -24,11 +24,11 @@ class AuthStore {
   signin = async (userData) => {
     try {
       const res = await instance.post("/signin", userData);
-      this.setUser(res.data.token);
-      this.user = decode(res.data.token);
-      console.log("AuthStore -> signin -> res.data.token", res.data.token);
+      this.setUser(res.data.token); // this line needs an await
+      this.user = decode(res.data.token); // remove this line, you dont need it
+      console.log("AuthStore -> signin -> res.data.token", res.data.token); // remove unnecessary console logs before pushing and merging to master
     } catch (error) {
-      console.log("AuthStore -> signin ->error", error);
+      console.log("AuthStore -> signin ->error", error); // keep console logs like this one, necessary ones.
     }
   };
 
@@ -44,7 +44,7 @@ class AuthStore {
       const currentTime = Date.now();
       const user = decode(token);
       if (user.expires >= currentTime) {
-        this.setUser(token);
+        this.setUser(token); // this line needs an await
       } else {
         this.signout();
       }
@@ -57,6 +57,7 @@ decorate(AuthStore, {
 });
 
 const authStore = new AuthStore();
+// why is this line commented?
 // authStore.checkForToken();
 
 export default authStore;
