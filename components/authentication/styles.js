@@ -26,6 +26,7 @@ export const AuthTextInput = styled.TextInput`
   border-bottom-color: #ff6900;
   border-bottom-width: 1px;
 `;
+
 export const AuthButton = styled.TouchableOpacity`
   align-self: stretch;
   align-items: center;
@@ -39,6 +40,7 @@ export const AuthButtonText = styled.Text`
   font-weight: bold;
   font-size: 18px;
 `;
+
 export const AuthOther = styled.Text`
   color: red;
   margin-top: 15px;

@@ -10,9 +10,12 @@ const DeleteButton = ({ trip }) => {
     if (authStore.user.id === trip.userId) {
       tripStore.deleteTrip(trip.id);
     } else {
+      // good functionality, not as good UI/UX design. This isn't very user-friendly.
+      // make it better and nicer for non-tech people (normal human beings with feelings)
       alert("un-Authorized!");
     }
   };
+
   return (
     <View>
       <TouchableOpacity onPress={handleDelete}>
@@ -21,4 +24,5 @@ const DeleteButton = ({ trip }) => {
     </View>
   );
 };
+
 export default DeleteButton;

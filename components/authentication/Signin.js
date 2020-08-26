@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-//Styles
+// Styles
 import {
   AuthContainer,
   AuthTitle,
@@ -22,10 +22,12 @@ function Signin({ navigation }) {
     await authStore.signin(user);
     if (authStore.user) navigation.replace("Trips");
   };
+
   return (
     <AuthContainer>
       <AuthTitle>Signin</AuthTitle>
       <AuthTextInput
+        // repeated event handler function
         onChangeText={(username) => setUser({ ...user, username })}
         placeholder="Username"
         autoCapitalize="none"

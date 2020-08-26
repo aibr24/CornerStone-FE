@@ -11,5 +11,6 @@ function App() {
   );
 }
 
+// what's this and why do you need it?
 registerRootComponent(App);
 export default App;

@@ -10,10 +10,11 @@ const SignoutButton = () => {
   const navigation = useNavigation();
   handleSignout = () => {
     if (authStore.user) {
-      authStore.signout;
+      authStore.signout; // this doesn't work
       navigation.navigate("Signin");
     }
   };
+
   return (
     <View>
       <TouchableOpacity onPress={handleSignout}>
@@ -22,4 +23,5 @@ const SignoutButton = () => {
     </View>
   );
 };
+
 export default observer(SignoutButton);
