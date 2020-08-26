@@ -25,6 +25,7 @@ function Signup({ navigation }) {
     authStore.signup(user);
     if (authStore.user) navigation.replace("Trips");
   };
+  
   return (
     <AuthContainer>
       <AuthTitle>Signup</AuthTitle>

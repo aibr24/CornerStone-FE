@@ -4,6 +4,7 @@ import tripStore from "../../stores/tripStore";
 import TripItem from "./TripItem";
 import { Content, List } from "native-base";
 import { observer } from "mobx-react";
+import AddButton from "../buttons/AddButton";
 
 const TripList = () => {
   //
@@ -14,6 +15,7 @@ const TripList = () => {
   return (
     <Content>
       <List>{listoftrips}</List>
+      <AddButton />
     </Content>
   );
 };
