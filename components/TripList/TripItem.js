@@ -1,9 +1,12 @@
 import React from "react";
 import { View, Text } from "react-native";
 import { Left, Thumbnail, Body, ListItem, Right } from "native-base";
-import DeleteButton from "../buttons/DeleteButton";
 import { observer } from "mobx-react";
 import { useNavigation } from "@react-navigation/native";
+// Components
+import UpdateButton from "../buttons/UpdateButton";
+import DeleteButton from "../buttons/DeleteButton";
+
 // Styles
 import { TripName } from "./styles";
 
@@ -34,9 +37,9 @@ const TripItem = ({ trip }) => {
           {trip.details}
         </Text>
       </Body>
-      <Right>
-        <DeleteButton trip={trip} />
-      </Right>
+
+      <DeleteButton trip={trip} />
+      <UpdateButton trip={trip} />
     </ListItem>
   );
 };

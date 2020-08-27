@@ -17,7 +17,11 @@ const DeleteButton = ({ trip }) => {
   return (
     <View>
       <TouchableOpacity onPress={handleDelete}>
-        <TrashIcon name="trash-alt" type="FontAwesome5" />
+        <TrashIcon
+          name="trash-alt"
+          type="FontAwesome5"
+          style={{ padding: 10 }}
+        />
       </TouchableOpacity>
     </View>
   );
