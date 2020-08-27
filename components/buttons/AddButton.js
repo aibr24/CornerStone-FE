@@ -19,17 +19,18 @@ const AddButton = () => {
     details: "",
     image: "",
   });
-  console.log(newTrip);
 
   const submitTrip = () => {
     tripStore.createTrip(newTrip);
     closeModal();
   };
+
   return (
     <View>
       <Modal animationType="slide" transparent={true} visible={isOpen}>
         <AddModalContainer>
           <AddTextInput
+            // repeated event handler
             onChangeText={(title) => setNewTrip({ ...newTrip, title })}
             placeholder="Title"
             placeholderTextColor="#A6AEC1"
