@@ -1,5 +1,6 @@
 import styled from "styled-components/native";
 import { Icon } from "native-base";
+
 export const AddButtonStyled = styled.TouchableOpacity`
   align-self: stretch;
   align-items: center;

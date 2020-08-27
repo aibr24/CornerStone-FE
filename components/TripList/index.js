@@ -7,7 +7,6 @@ import { observer } from "mobx-react";
 import AddButton from "../buttons/AddButton";
 
 const TripList = () => {
-  //
   const listoftrips = tripStore.trips.map((item) => (
     <TripItem trip={item} key={item.id} />
   ));

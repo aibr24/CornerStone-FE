@@ -23,6 +23,7 @@ const TripItem = ({ trip }) => {
       </Left>
       {/* an onpress that would send the user to detail component, it passes {trip : trip} to detail page through route param/ ex. navigation.navigate("TripDetail",{trip:trip}) */}
       <Body>
+        {/* This onPress is repeated. Maybe just move it to the <Body> component? */}
         <TripName
           onPress={() => navigation.navigate("Trip Detail", { trip: trip })}
         >
