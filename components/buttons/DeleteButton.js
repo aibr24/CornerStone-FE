@@ -4,6 +4,7 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import Icon from "react-native-vector-icons/AntDesign";
 import tripStore from "../../stores/tripStore";
 import authStore from "../../stores/authStore";
+import { TrashIcon } from "./styles";
 
 const DeleteButton = ({ trip }) => {
   handleDelete = () => {
@@ -16,7 +17,7 @@ const DeleteButton = ({ trip }) => {
   return (
     <View>
       <TouchableOpacity onPress={handleDelete}>
-        <Icon name="delete" size={20} />
+        <TrashIcon name="trash-alt" type="FontAwesome5" />
       </TouchableOpacity>
     </View>
   );

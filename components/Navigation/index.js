@@ -5,6 +5,7 @@ import Signin from "../authentication/Signin";
 import Singup from "../authentication/Signup";
 import TripList from "../TripList";
 import SignoutButton from "../buttons/SignoutButton";
+import TripDetail from "../TripDetail";
 
 const { Navigator, Screen } = createStackNavigator();
 
@@ -24,6 +25,7 @@ const RootNav = () => {
     >
       <Screen name="Signin" component={Signin} />
       <Screen name="Signup" component={Singup} />
+      <Screen name="Trip Detail" component={TripDetail} />
       <Screen
         name="Trips"
         component={TripList}

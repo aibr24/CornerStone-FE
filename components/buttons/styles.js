@@ -1,5 +1,5 @@
 import styled from "styled-components/native";
-
+import { Icon } from "native-base";
 export const AddButtonStyled = styled.TouchableOpacity`
   align-self: stretch;
   align-items: center;
@@ -32,4 +32,9 @@ export const AddTextInput = styled.TextInput`
   color: #decdc3;
   border-bottom-color: #ff6900;
   border-bottom-width: 1px;
+`;
+
+export const TrashIcon = styled(Icon)`
+  color: black;
+  font-size: 25px;
 `;
