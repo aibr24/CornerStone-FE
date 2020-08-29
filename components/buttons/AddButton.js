@@ -19,7 +19,6 @@ const AddButton = () => {
     details: "",
     image: "",
   });
-  console.log(newTrip);
 
   const submitTrip = () => {
     tripStore.createTrip(newTrip);

@@ -24,7 +24,7 @@ class AuthStore {
   signin = async (userData) => {
     try {
       const res = await instance.post("/signin", userData);
-      this.setUser(res.data.token);
+      await this.setUser(res.data.token);
       this.user = decode(res.data.token);
       console.log("AuthStore -> signin -> res.data.token", res.data.token);
     } catch (error) {
@@ -32,20 +32,22 @@ class AuthStore {
     }
   };
 
-  signout = () => {
+  signout = async () => {
     delete instance.defaults.headers.common.Authorization;
-    localStorage.removeItem("myToken");
+    await AsyncStorage.removeItem("myToken");
     this.user = null;
   };
 
   checkForToken = async () => {
     const token = await AsyncStorage.getItem("myToken");
+    console.log(token);
     if (token) {
       const currentTime = Date.now();
       const user = decode(token);
       if (user.expires >= currentTime) {
-        this.setUser(token);
+        await this.setUser(token);
       } else {
+        console.log("no Token");
         this.signout();
       }
     }
@@ -57,6 +59,6 @@ decorate(AuthStore, {
 });
 
 const authStore = new AuthStore();
-// authStore.checkForToken();
+authStore.checkForToken();
 
 export default authStore;
