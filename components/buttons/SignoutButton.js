@@ -8,10 +8,11 @@ import { useNavigation } from "@react-navigation/native";
 
 const SignoutButton = () => {
   const navigation = useNavigation();
+
   handleSignout = () => {
     if (authStore.user) {
       authStore.signout;
-      navigation.navigate("Signin");
+      navigation.replace("Signin");
     }
   };
   return (

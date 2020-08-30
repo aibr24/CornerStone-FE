@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, Modal } from "react-native";
+import { View, Text, Modal, Button } from "react-native";
 import {
   AddButtonStyled,
   AddButtonText,
@@ -13,7 +13,6 @@ const AddButton = () => {
   const [isOpen, setIsOpen] = useState(false);
   const closeModal = () => setIsOpen(false);
   const openModal = () => setIsOpen(true);
-
   const [newTrip, setNewTrip] = useState({
     title: "",
     details: "",
@@ -43,12 +42,14 @@ const AddButton = () => {
             placeholder="Image"
             placeholderTextColor="#A6AEC1"
           ></AddTextInput>
-          <AddButtonStyled onPress={submitTrip}>
-            <AddButtonText>Submit</AddButtonText>
-          </AddButtonStyled>
+          <View>
+            <AddButtonStyled onPress={submitTrip}>
+              <AddButtonText>Submit</AddButtonText>
+            </AddButtonStyled>
+            <Button title="Cancel" onPress={closeModal} color="red"></Button>
+          </View>
         </AddModalContainer>
       </Modal>
-
       <AddButtonStyled onPress={openModal}>
         <AddButtonText>Add Trip</AddButtonText>
       </AddButtonStyled>
