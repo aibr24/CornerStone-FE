@@ -25,6 +25,7 @@ const TripItem = ({ trip }) => {
         />
       </Left>
       {/* an onpress that would send the user to detail component, it passes {trip : trip} to detail page through route param/ ex. navigation.navigate("TripDetail",{trip:trip}) */}
+      {/* REVIEW: What's the purpose of this comment above? */}
       <Body>
         <TripName
           onPress={() => navigation.navigate("Trip Detail", { trip: trip })}
@@ -37,7 +38,7 @@ const TripItem = ({ trip }) => {
           {trip.details}
         </Text>
       </Body>
-
+      {/* REVIEW: Does the `DeleteButton` need the whole trip?  */}
       <DeleteButton trip={trip} />
       <UpdateButton trip={trip} />
     </ListItem>

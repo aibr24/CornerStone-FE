@@ -6,6 +6,8 @@ import TripList from "../TripList";
 import EntypoIcon from "react-native-vector-icons/Entypo";
 import AntDesignIcon from "react-native-vector-icons/AntDesign";
 
+// REVIEW: Organize your imports. BTW, you can use `NativeBase` Icon here as well, copy paste we7na mu fahmeen ma naby.
+
 const Tab = createMaterialBottomTabNavigator();
 
 const MyTabs = () => {
