@@ -28,19 +28,23 @@ class AuthStore {
       this.user = decode(res.data.token);
       console.log("AuthStore -> signin -> res.data.token", res.data.token);
     } catch (error) {
-      console.log("AuthStore -> signin ->error", error);
+      alert("AuthStore -> signin ->error", error);
     }
   };
 
   signout = async () => {
-    delete instance.defaults.headers.common.Authorization;
-    await AsyncStorage.removeItem("myToken");
-    this.user = null;
+    try {
+      delete instance.defaults.headers.common.Authorization;
+      await AsyncStorage.removeItem("myToken");
+      console.log(" sighOut----this toke is ", token);
+      this.user = null;
+    } catch (error) {
+      console.log(error);
+    }
   };
-
   checkForToken = async () => {
     const token = await AsyncStorage.getItem("myToken");
-    console.log(token);
+    console.log("check ----this toke is ", token);
     if (token) {
       const currentTime = Date.now();
       const user = decode(token);

@@ -6,6 +6,7 @@ export const AddButtonStyled = styled.TouchableOpacity`
   padding: 20px;
   background-color: #2f4751;
   margin-top: 30px;
+  margin-bottom: 10px;
 `;
 
 export const AddButtonText = styled.Text`
