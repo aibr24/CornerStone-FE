@@ -1,45 +1,39 @@
 import React from "react";
+import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 
 // Components
-import Signin from "../authentication/Signin";
-// REVIEW: Singup??
-import Singup from "../authentication/Signup";
-import TripList from "../TripList";
-import SignoutButton from "../buttons/SignoutButton";
-import TripDetail from "../TripDetail";
-import MyTabs from "./MyTabs";
+import AllTrips from "../TripList/AllTrips";
+// Styles
+import EntypoIcon from "react-native-vector-icons/Entypo";
+import AntDesignIcon from "react-native-vector-icons/AntDesign";
+import ProfileNav from "./ProfileNav";
 
-// Navigators
-import { createStackNavigator } from "@react-navigation/stack";
+const { Navigator, Screen } = createMaterialBottomTabNavigator();
 
-const { Navigator, Screen } = createStackNavigator();
-
-const RootNav = () => {
+const MyTabs = () => {
   return (
-    <Navigator
-      initialRouteName="Tabs"
-      screenOptions={{
-        headerTintColor: "white",
-        headerStyle: {
-          backgroundColor: "#4c525c",
-        },
-        headerTitleStyle: {
-          fontWeight: "bold",
-        },
-        headerRight: () => <SignoutButton />,
-      }}
-    >
-      <Screen name="Signin" component={Signin} />
-      <Screen name="Signup" component={Singup} />
+    <Navigator initialRouteName="Profile" activeColor="white">
       <Screen
-        name="Trips"
-        component={TripList}
-        options={{ headerRight: () => <SignoutButton /> }}
+        name="AllTrips"
+        component={AllTrips}
+        options={{
+          tabBarIcon: () => (
+            <EntypoIcon name="paper-plane" color="white" size={20} />
+          ),
+        }}
       />
-      <Screen name="Trip Detail" component={TripDetail} />
-      <Screen name="Tabs" component={MyTabs} />
+      <Screen
+        name="Profile"
+        component={ProfileNav}
+        options={{
+          tabBarLabel: "Profile",
+          tabBarIcon: () => (
+            <AntDesignIcon name="user" color="white" size={20} />
+          ),
+        }}
+      />
     </Navigator>
   );
 };
 
-export default RootNav;
+export default MyTabs;
