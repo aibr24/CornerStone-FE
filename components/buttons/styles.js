@@ -1,6 +1,6 @@
 import styled from "styled-components/native";
 import { Icon } from "native-base";
-// REVIEW: Spacing ya jma3a
+
 export const AddButtonStyled = styled.TouchableOpacity`
   align-self: stretch;
   align-items: center;

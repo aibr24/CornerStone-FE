@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { observer } from "mobx-react";
 
 //Styles
 import {
@@ -9,8 +10,9 @@ import {
   AuthButtonText,
   AuthOther,
 } from "./styles";
+
+// Stores
 import authStore from "../../stores/authStore";
-import { observer } from "mobx-react";
 
 function Signin({ navigation }) {
   const [user, setUser] = useState({

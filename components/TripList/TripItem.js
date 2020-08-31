@@ -1,14 +1,15 @@
 import React from "react";
-import { View, Text } from "react-native";
-import { Left, Thumbnail, Body, ListItem, Right } from "native-base";
 import { observer } from "mobx-react";
 import { useNavigation } from "@react-navigation/native";
+
+// Styles
+import { Text } from "react-native";
+import { Left, Thumbnail, Body, ListItem } from "native-base";
+import { TripName } from "./styles";
+
 // Components
 import UpdateButton from "../buttons/UpdateButton";
 import DeleteButton from "../buttons/DeleteButton";
-
-// Styles
-import { TripName } from "./styles";
 
 const TripItem = ({ trip }) => {
   const navigation = useNavigation();
@@ -24,8 +25,7 @@ const TripItem = ({ trip }) => {
           }}
         />
       </Left>
-      {/* an onpress that would send the user to detail component, it passes {trip : trip} to detail page through route param/ ex. navigation.navigate("TripDetail",{trip:trip}) */}
-      {/* REVIEW: What's the purpose of this comment above? */}
+
       <Body>
         <TripName
           onPress={() => navigation.navigate("Trip Detail", { trip: trip })}
@@ -38,7 +38,6 @@ const TripItem = ({ trip }) => {
           {trip.details}
         </Text>
       </Body>
-      {/* REVIEW: Does the `DeleteButton` need the whole trip?  */}
       <DeleteButton trip={trip} />
       <UpdateButton trip={trip} />
     </ListItem>

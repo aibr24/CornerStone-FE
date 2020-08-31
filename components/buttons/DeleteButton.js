@@ -1,9 +1,13 @@
 import React from "react";
+
+// Styles
 import { View } from "native-base";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import { TrashIcon } from "./styles";
+
+// Stores
 import tripStore from "../../stores/tripStore";
 import authStore from "../../stores/authStore";
-import { TrashIcon } from "./styles";
 
 const DeleteButton = ({ trip }) => {
   handleDelete = () => {

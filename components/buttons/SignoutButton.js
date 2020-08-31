@@ -1,18 +1,21 @@
 import React from "react";
-import authStore from "../../stores/authStore";
+import { useNavigation } from "@react-navigation/native";
+import { observer } from "mobx-react";
+
+// Styles
 import { View } from "native-base";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import Icon from "react-native-vector-icons/Feather";
-import { observer } from "mobx-react";
-import { useNavigation } from "@react-navigation/native";
+
+// Stores
+import authStore from "../../stores/authStore";
 
 const SignoutButton = () => {
   const navigation = useNavigation();
 
-  handleSignout = () => {
+  handleSignout = async () => {
     if (authStore.user) {
-      // REVIEW: Something is wrong here, debug and fix please
-      authStore.signout;
+      await authStore.signout();
       navigation.replace("Signin");
     }
   };

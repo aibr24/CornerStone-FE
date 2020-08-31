@@ -1,18 +1,19 @@
 import React from "react";
-
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
+
+// Components
 import Profile from "../Profile";
 import TripList from "../TripList";
+
+// Styles
 import EntypoIcon from "react-native-vector-icons/Entypo";
 import AntDesignIcon from "react-native-vector-icons/AntDesign";
-
-// REVIEW: Organize your imports. BTW, you can use `NativeBase` Icon here as well, copy paste we7na mu fahmeen ma naby.
 
 const Tab = createMaterialBottomTabNavigator();
 
 const MyTabs = () => {
   return (
-    <Tab.Navigator initialRouteName="Home" activeColor="white">
+    <Tab.Navigator initialRouteName="Trips" activeColor="white">
       <Tab.Screen
         name="Trips"
         component={TripList}

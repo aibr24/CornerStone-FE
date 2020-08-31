@@ -1,31 +1,33 @@
 import React from "react";
-import { View, Text } from "react-native";
-import tripStore from "../../stores/tripStore";
-import TripItem from "./TripItem";
-import { Content, List } from "native-base";
 import { observer } from "mobx-react";
-import AddButton from "../buttons/AddButton";
-import authStore from "../../stores/authStore";
 import { useNavigation } from "@react-navigation/native";
-// REVIEW: Organize your imports
+
+//Styles
+import AddTrip from "./AddTrip";
+import { Content, List } from "native-base";
+
+//Components
+import TripItem from "./TripItem";
+
+// Stores
+import tripStore from "../../stores/tripStore";
+import authStore from "../../stores/authStore";
 
 const TripList = () => {
   const navigation = useNavigation();
-  // REVIEW: The code below can be cleaned up, think about it
-  // ANOTHER REVIEW: listoftrips should be camelCase
-  let listoftrips = [];
-  if (authStore.user) {
-    listoftrips = tripStore.trips
-      .filter((item) => item.userId == authStore.user.id)
-      .map((item) => <TripItem trip={item} key={item.id} />);
-  } else {
-    navigation.navigate("Signin");
-  }
+
+  let listOfTrips = [];
+
+  authStore.user
+    ? (listOfTrips = tripStore.trips
+        .filter((item) => item.userId == authStore.user.id)
+        .map((item) => <TripItem trip={item} key={item.id} />))
+    : navigation.navigate("Signin");
 
   return (
     <Content>
-      <List>{listoftrips}</List>
-      <AddButton />
+      <List>{listOfTrips}</List>
+      <AddTrip />
     </Content>
   );
 };
