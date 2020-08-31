@@ -13,8 +13,11 @@ import {
 
 // Stores
 import authStore from "../../stores/authStore";
+import { useNavigation } from "@react-navigation/native";
 
-function Signin({ navigation }) {
+function Signin() {
+  const navigation = useNavigation();
+
   const [user, setUser] = useState({
     username: "",
     password: "",
@@ -22,7 +25,7 @@ function Signin({ navigation }) {
 
   const handleSubmit = async () => {
     await authStore.signin(user);
-    if (authStore.user) navigation.replace("Trips");
+    if (authStore.user) navigation.replace("Profile");
   };
   return (
     <AuthContainer>
