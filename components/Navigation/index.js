@@ -17,7 +17,7 @@ const { Navigator, Screen } = createStackNavigator();
 const RootNav = () => {
   return (
     <Navigator
-      initialRouteName="Signin"
+      initialRouteName="Tabs"
       screenOptions={{
         headerTintColor: "white",
         headerStyle: {
@@ -26,6 +26,7 @@ const RootNav = () => {
         headerTitleStyle: {
           fontWeight: "bold",
         },
+        headerRight: () => <SignoutButton />,
       }}
     >
       <Screen name="Signin" component={Signin} />
@@ -36,7 +37,7 @@ const RootNav = () => {
         options={{ headerRight: () => <SignoutButton /> }}
       />
       <Screen name="Trip Detail" component={TripDetail} />
-      <Screen name="Profile" component={MyTabs} />
+      <Screen name="Tabs" component={MyTabs} />
     </Navigator>
   );
 };

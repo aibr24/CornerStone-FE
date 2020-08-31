@@ -1,32 +1,34 @@
 import React, { useState } from "react";
-import { View, Text, Modal, Button } from "react-native";
+
+// Styles
+import { View, Modal, Button } from "react-native";
 import {
   AddButtonStyled,
   AddButtonText,
   AddModalContainer,
   AddTextInput,
-} from "./styles";
+} from "../buttons/styles";
+
+// Stores
 import tripStore from "../../stores/tripStore";
-import authStore from "../../stores/authStore";
-// REVIEW: Clean up your imports and organize them
 
-// REVIEW: This component is called `AddButton`, but it's actually the create modal component, not just the button. Please clean it up. The same thing applies to the `UpdateButton` component.
-
-const AddButton = () => {
-  // REVIEW: Add spacing shway between state and methods, khanga
+const AddTrip = () => {
   const [isOpen, setIsOpen] = useState(false);
+
   const closeModal = () => setIsOpen(false);
   const openModal = () => setIsOpen(true);
+
   const [newTrip, setNewTrip] = useState({
     title: "",
     details: "",
     image: "",
   });
 
-  const submitTrip = () => {
-    tripStore.createTrip(newTrip);
+  const submitTrip = async () => {
+    await tripStore.createTrip(newTrip);
     closeModal();
   };
+
   return (
     <View>
       <Modal animationType="slide" transparent={true} visible={isOpen}>
@@ -61,4 +63,4 @@ const AddButton = () => {
   );
 };
 
-export default AddButton;
+export default AddTrip;

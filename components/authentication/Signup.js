@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-//Styles
+// Styles
 import {
   AuthContainer,
   AuthTitle,
@@ -9,7 +9,8 @@ import {
   AuthButtonText,
   AuthOther,
 } from "./styles";
-//Stores
+
+// Stores
 import authStore from "../../stores/authStore";
 
 function Signup({ navigation }) {
@@ -25,7 +26,7 @@ function Signup({ navigation }) {
     authStore.signup(user);
     if (authStore.user) navigation.replace("Trips");
   };
-  
+
   return (
     <AuthContainer>
       <AuthTitle>Signup</AuthTitle>

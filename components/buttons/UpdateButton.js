@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import { View, Text, Modal } from "react-native";
+
+// Styles
+import { View, Modal } from "react-native";
 import Icon from "react-native-vector-icons/Feather";
 import {
   AddButtonStyled,
@@ -7,9 +9,11 @@ import {
   AddModalContainer,
   AddTextInput,
 } from "./styles";
+import { TouchableOpacity } from "react-native-gesture-handler";
+
+// Stores
 import tripStore from "../../stores/tripStore";
 import authStore from "../../stores/authStore";
-import { TouchableOpacity } from "react-native-gesture-handler";
 
 const UpdateButton = ({ trip }) => {
   const [isOpen, setIsOpen] = useState(false);
