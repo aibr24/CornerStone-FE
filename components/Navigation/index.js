@@ -2,6 +2,7 @@ import React from "react";
 
 // Components
 import Signin from "../authentication/Signin";
+// REVIEW: Singup??
 import Singup from "../authentication/Signup";
 import TripList from "../TripList";
 import SignoutButton from "../buttons/SignoutButton";

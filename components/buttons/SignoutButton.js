@@ -11,6 +11,7 @@ const SignoutButton = () => {
 
   handleSignout = () => {
     if (authStore.user) {
+      // REVIEW: Something is wrong here, debug and fix please
       authStore.signout;
       navigation.replace("Signin");
     }

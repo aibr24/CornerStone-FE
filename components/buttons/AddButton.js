@@ -8,8 +8,12 @@ import {
 } from "./styles";
 import tripStore from "../../stores/tripStore";
 import authStore from "../../stores/authStore";
+// REVIEW: Clean up your imports and organize them
+
+// REVIEW: This component is called `AddButton`, but it's actually the create modal component, not just the button. Please clean it up. The same thing applies to the `UpdateButton` component.
 
 const AddButton = () => {
+  // REVIEW: Add spacing shway between state and methods, khanga
   const [isOpen, setIsOpen] = useState(false);
   const closeModal = () => setIsOpen(false);
   const openModal = () => setIsOpen(true);

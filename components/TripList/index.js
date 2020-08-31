@@ -7,11 +7,13 @@ import { observer } from "mobx-react";
 import AddButton from "../buttons/AddButton";
 import authStore from "../../stores/authStore";
 import { useNavigation } from "@react-navigation/native";
+// REVIEW: Organize your imports
 
 const TripList = () => {
   const navigation = useNavigation();
+  // REVIEW: The code below can be cleaned up, think about it
+  // ANOTHER REVIEW: listoftrips should be camelCase
   let listoftrips = [];
-
   if (authStore.user) {
     listoftrips = tripStore.trips
       .filter((item) => item.userId == authStore.user.id)

@@ -11,5 +11,6 @@ function App() {
   );
 }
 
+// REVIEW: Ali, Is this still needed? I believe the issue is resolved already. Try removing it and let me know what happens please.
 registerRootComponent(App);
 export default App;

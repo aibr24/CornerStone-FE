@@ -8,6 +8,7 @@ const TripDetail = ({ route }) => {
   return (
     <View>
       {/* we can ditch the Card thing i was just testing it stylewise, we can make it a modal popup that is the detail page if you guys like that better, or whatever yall see fit */}
+      {/* REVIEW: A reply to the comment above: in the detail page you're showing the trip's details, it might be a lot of text. I believe it would look better in it's own page. But it doesn't have to be a card */}
       <Card>
         <CardItem>
           <Left>
@@ -34,6 +35,7 @@ const TripDetail = ({ route }) => {
                 : "https://media-cdn.tripadvisor.com/media/photo-s/0e/9a/e3/1d/freedom-tower.jpg",
             }}
             style={{ height: 200, width: null, flex: 1 }}
+            // Inline styling?? Seriously?
           />
         </CardItem>
         <CardItem>

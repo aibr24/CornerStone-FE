@@ -4,7 +4,7 @@ import decode from "jwt-decode";
 import AsyncStorage from "@react-native-community/async-storage";
 
 class AuthStore {
-  user = [];
+  user = []; // REVIEW: Why is the user an empty array?
 
   setUser = async (token) => {
     await AsyncStorage.setItem("myToken", token);
@@ -25,7 +25,9 @@ class AuthStore {
     try {
       const res = await instance.post("/signin", userData);
       await this.setUser(res.data.token);
+      // REVIEW: Why are you decoding the token twice? This will cause issues later, please remove it
       this.user = decode(res.data.token);
+      // REVIEW: Remove the console log if signin is working
       console.log("AuthStore -> signin -> res.data.token", res.data.token);
     } catch (error) {
       alert("AuthStore -> signin ->error", error);
@@ -36,6 +38,7 @@ class AuthStore {
     try {
       delete instance.defaults.headers.common.Authorization;
       await AsyncStorage.removeItem("myToken");
+      // REVIEW: Remove the console log if signout is working
       console.log(" sighOut----this toke is ", token);
       this.user = null;
     } catch (error) {
@@ -44,6 +47,7 @@ class AuthStore {
   };
   checkForToken = async () => {
     const token = await AsyncStorage.getItem("myToken");
+    // REVIEW: Remove the console log if this is working
     console.log("check ----this toke is ", token);
     if (token) {
       const currentTime = Date.now();
@@ -51,6 +55,7 @@ class AuthStore {
       if (user.expires >= currentTime) {
         await this.setUser(token);
       } else {
+        // REVIEW: Remove the console log if this is working
         console.log("no Token");
         this.signout();
       }
