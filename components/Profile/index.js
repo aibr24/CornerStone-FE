@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { observer } from "mobx-react";
+
 // Components
-import TripItem from "../TripList/TripItem";
+import UpdateProfile from "../buttons/UpdateProfile";
 
 // Styles
 import { View } from "react-native";
-
 import Ionicons from "react-native-vector-icons/Ionicons";
 import {
   ProfileContainer,
@@ -26,10 +26,8 @@ import tripStore from "../../stores/tripStore";
 
 const Profile = () => {
   let profile = null;
-  if (authStore.user)
-    profile = profileStore.profiles.find(
-      (item) => item.userId === authStore.user.id
-    );
+  if (authStore.user) profile = profileStore.getProfileById(authStore.user.id);
+
   const listOfTrips = tripStore.trips.filter(
     (item) => item.userId == authStore.user.id
   );
@@ -50,12 +48,13 @@ const Profile = () => {
         </ProfileImage>
         <ActiveStyled></ActiveStyled>
         <AddStyled>
-          <Ionicons
+          {/* <Ionicons
             name="ios-add"
             size={48}
             color="#DFD8C8"
             style={{ marginTop: 6, marginLeft: 2 }}
-          ></Ionicons>
+          ></Ionicons> */}
+          <UpdateProfile profile={profile} />
         </AddStyled>
       </View>
 

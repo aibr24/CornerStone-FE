@@ -1,5 +1,6 @@
 import styled from "styled-components/native";
 import { Text, View, SafeAreaView, Image, ScrollView } from "react-native";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 export const ProfileContainer = styled.SafeAreaView`
   flex: 1;
@@ -41,7 +42,7 @@ export const ActiveStyled = styled.View`
   border-radius: 10;
 `;
 
-export const AddStyled = styled.View`
+export const AddStyled = styled.TouchableOpacity`
   background-color: #41444b;
   position: absolute;
   bottom: 0;
