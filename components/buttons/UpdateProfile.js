@@ -28,7 +28,7 @@ const UpdateProfile = ({ profile }) => {
     closeModal();
   };
   const handleUpdate = () => {
-    if (authStore.user.id === profille.userId) {
+    if (authStore.user.id === profile.userId) {
       openModal();
     } else {
       alert("Un-Authorized!");
