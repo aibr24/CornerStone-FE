@@ -54,7 +54,7 @@ const UpdateProfile = ({ profile }) => {
         </AddModalContainer>
       </Modal>
       <TouchableOpacity onPress={handleUpdate}>
-        <Icon name="edit" size={20} style={{ padding: 10 }} />
+        <Icon name="edit" size={20} style={{ padding: 10 }} color={"#DFD8C8"} />
       </TouchableOpacity>
     </View>
   );
