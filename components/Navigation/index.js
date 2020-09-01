@@ -7,6 +7,7 @@ import AllTrips from "../TripList/AllTrips";
 import EntypoIcon from "react-native-vector-icons/Entypo";
 import AntDesignIcon from "react-native-vector-icons/AntDesign";
 import ProfileNav from "./ProfileNav";
+import ProfileTripList from "../ProfileTripList";
 
 const { Navigator, Screen } = createMaterialBottomTabNavigator();
 
@@ -15,7 +16,7 @@ const MyTabs = () => {
     <Navigator initialRouteName="Profile" activeColor="white">
       <Screen
         name="AllTrips"
-        component={AllTrips}
+        component={ProfileTripList}
         options={{
           tabBarIcon: () => (
             <EntypoIcon name="paper-plane" color="white" size={20} />

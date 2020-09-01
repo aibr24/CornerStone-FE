@@ -22,16 +22,18 @@ import {
 import profileStore from "../../stores/profileStore";
 import authStore from "../../stores/authStore";
 import tripStore from "../../stores/tripStore";
+import { TouchableOpacity } from "react-native-gesture-handler";
+import { useNavigation } from "@react-navigation/native";
 
 const Profile = () => {
+  const navigation = useNavigation();
+
   let profile = null;
   if (authStore.user) profile = profileStore.getProfileById(authStore.user.id);
 
   const listOfTrips = tripStore.trips.filter(
     (item) => item.userId === authStore.user.id
   );
-
-  // const tripSum = () => listOfTrips.length;
 
   return (
     <ProfileContainer>
@@ -62,8 +64,12 @@ const Profile = () => {
 
       <StatsContainerStyled>
         <StatsBoxStyled>
-          <TextStyled style={{ fontSize: 24 }}>{listOfTrips.length}</TextStyled>
-          <TextStyled className="subText">My Trips</TextStyled>
+          <TouchableOpacity onPress={navigation.navigate("MyTrips")}>
+            <TextStyled style={{ fontSize: 24 }}>
+              {listOfTrips.length}
+            </TextStyled>
+            <TextStyled className="subText">My Trips</TextStyled>
+          </TouchableOpacity>
         </StatsBoxStyled>
       </StatsContainerStyled>
 

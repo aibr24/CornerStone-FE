@@ -18,7 +18,7 @@ const AllTrips = () => {
     listOfTrips = tripStore.trips
       .filter((item) => item.userId !== authStore.user.id)
       .map((item) => <TripItem trip={item} key={item.id} />);
-
+  console.log(listOfTrips);
   return (
     <Content>
       <List>{listOfTrips}</List>
