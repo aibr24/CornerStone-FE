@@ -13,7 +13,7 @@ const Tab = createMaterialBottomTabNavigator();
 
 const MyTabs = () => {
   return (
-    <Tab.Navigator initialRouteName="Trips" activeColor="white">
+    <Tab.Navigator initialRouteName="Profile" activeColor="white">
       <Tab.Screen
         name="Trips"
         component={TripList}
