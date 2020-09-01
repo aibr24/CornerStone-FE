@@ -4,6 +4,9 @@ import instance from "./instance";
 class ProfileStore {
   profiles = [];
 
+  getProfileById = (user) =>
+    this.profiles.find((profile) => profile.userId === user);
+
   fetchProfiles = async () => {
     try {
       const res = await instance.get("/profiles");
