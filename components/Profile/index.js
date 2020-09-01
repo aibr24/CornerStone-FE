@@ -6,7 +6,6 @@ import UpdateProfile from "../buttons/UpdateProfile";
 
 // Styles
 import { View } from "react-native";
-import Ionicons from "react-native-vector-icons/Ionicons";
 import {
   ProfileContainer,
   ProfileImage,
@@ -48,12 +47,6 @@ const Profile = () => {
         </ProfileImage>
         <ActiveStyled></ActiveStyled>
         <AddStyled>
-          {/* <Ionicons
-            name="ios-add"
-            size={48}
-            color="#DFD8C8"
-            style={{ marginTop: 6, marginLeft: 2 }}
-          ></Ionicons> */}
           <UpdateProfile profile={profile} />
         </AddStyled>
       </View>
