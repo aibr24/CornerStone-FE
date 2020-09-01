@@ -16,8 +16,6 @@ export const ProfileImage = styled.View`
 
 export const ImageStyled = styled.Image`
   flex: 1;
-  height: undefined;
-  width: undefined;
 `;
 
 export const DmStyled = styled.View`
@@ -60,7 +58,6 @@ export const InfoContainer = styled.View`
   margin-top: 16;
 `;
 export const TextStyled = styled.Text`
-  font-family: HelveticaNeue;
   color: #52575d;
 
   &.subText {
@@ -86,7 +83,6 @@ export const MediaImageContainer = styled.View`
   height: 200;
   border-radius: 12;
   overflow: hidden;
-  margin-horizontal: 10;
 `;
 
 export const MediaCount = styled.View`
@@ -100,9 +96,6 @@ export const MediaCount = styled.View`
   align-items: center;
   justify-content: center;
   border-radius: 12;
-  shadow-color: rgba(0, 0, 0, 0.38);
-  shadow-radius: 20;
-  shadow-opacity: 1;
 `;
 
 export const SubTextRecent = styled.Text`
