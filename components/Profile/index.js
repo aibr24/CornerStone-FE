@@ -28,10 +28,10 @@ const Profile = () => {
   if (authStore.user) profile = profileStore.getProfileById(authStore.user.id);
 
   const listOfTrips = tripStore.trips.filter(
-    (item) => item.userId == authStore.user.id
+    (item) => item.userId === authStore.user.id
   );
 
-  const tripSum = () => listOfTrips.length;
+  // const tripSum = () => listOfTrips.length;
 
   return (
     <ProfileContainer>
@@ -62,7 +62,7 @@ const Profile = () => {
 
       <StatsContainerStyled>
         <StatsBoxStyled>
-          <TextStyled style={{ fontSize: 24 }}>{() => tripSum}</TextStyled>
+          <TextStyled style={{ fontSize: 24 }}>{listOfTrips.length}</TextStyled>
           <TextStyled className="subText">My Trips</TextStyled>
         </StatsBoxStyled>
       </StatsContainerStyled>
