@@ -15,6 +15,7 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import tripStore from "../../stores/tripStore";
 import authStore from "../../stores/authStore";
 
+// REVIEW: شلووووووووووون Button وداخله في فورم كامل????? Rename your component!!!
 const UpdateButton = ({ trip }) => {
   const [isOpen, setIsOpen] = useState(false);
   const closeModal = () => setIsOpen(false);
