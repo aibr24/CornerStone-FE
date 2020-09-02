@@ -7,6 +7,8 @@ import tripStore from "../../stores/tripStore";
 import authStore from "../../stores/authStore";
 import ProfileTripItem from "./ProfileTripItem";
 
+// REVIEW: I'm confused. The component is called `ProfileTripList`, but it renders the trips that are NOT the user's trips.
+// REVIEW: function? Seriously?
 function ProfileTripList() {
   let listOfTrips = [];
 

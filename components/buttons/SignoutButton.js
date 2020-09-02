@@ -14,6 +14,7 @@ const SignoutButton = () => {
   const navigation = useNavigation();
 
   handleSignout = async () => {
+    // REVIEW: This is a very weird condition. If the user is not logged in, they're not supposed to see the button نهاااااائياً. Remove this condition.
     if (authStore.user) {
       await authStore.signout();
       navigation.replace("Signin");

@@ -26,6 +26,7 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
 
 const Profile = () => {
+  // REVIEW: Profile is a whole screen? Why are you using `useNavigation`?????? REMOVE IT!!!
   const navigation = useNavigation();
 
   let profile = null;

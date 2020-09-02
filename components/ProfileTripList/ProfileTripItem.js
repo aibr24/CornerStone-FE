@@ -1,6 +1,7 @@
 import React from "react";
 import { BoxItemContainer, BoxItemImage, BoxItemText } from "./styles";
 import { Body, Title } from "native-base";
+// REVIEW: Cleanup your imports
 
 function ProfileTripItem({ trip }) {
   return (
