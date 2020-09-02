@@ -69,56 +69,7 @@ const Profile = ({ navigation }) => {
           </TouchableOpacity>
         </StatsBoxStyled>
       </StatsContainerStyled>
-
-      {/* <View style={{ marginTop: 32 }}>
-          <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-            <MediaImageContainer>
-              <ImageStyled
-                source={{
-                  uri:
-                    "https://static0.cbrimages.com/wordpress/wp-content/uploads/2019/10/Featured-Image-9.jpg",
-                }}
-                resizeMode="cover"
-              ></ImageStyled>
-            </MediaImageContainer>
-            <MediaImageContainer>
-              <ImageStyled
-                source={{
-                  uri:
-                    "https://static0.cbrimages.com/wordpress/wp-content/uploads/2019/10/Featured-Image-9.jpg",
-                }}
-                resizeMode="cover"
-              ></ImageStyled>
-            </MediaImageContainer>
-            <MediaImageContainer>
-              <ImageStyled
-                source={{
-                  uri:
-                    "https://static0.cbrimages.com/wordpress/wp-content/uploads/2019/10/Featured-Image-9.jpg",
-                }}
-                resizeMode="cover"
-              ></ImageStyled>
-            </MediaImageContainer>
-          </ScrollView>
-          <MediaCount>
-            <TextStyled
-              style={{ fontSize: 24, color: "#DFD8C8", fontWeight: "300" }}
-            >
-              77
-            </TextStyled>
-            <TextStyled
-              style={{
-                fontSize: 12,
-                color: "#DFD8C8",
-                textTransform: "uppercase",
-              }}
-            >
-              Media
-            </TextStyled>
-          </MediaCount>
-        </View> */}
     </ProfileContainer>
   );
 };
-
 export default observer(Profile);
