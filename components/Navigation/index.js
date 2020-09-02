@@ -8,31 +8,22 @@ import ProfileNav from "./ProfileNav";
 // Styles
 import EntypoIcon from "react-native-vector-icons/Entypo";
 import AntDesignIcon from "react-native-vector-icons/AntDesign";
-import OwnerProfile from "../OwnerProfile";
-
+import AllTripNav from "./AllTripNav";
 const { Navigator, Screen } = createMaterialBottomTabNavigator();
 
 const MyTabs = () => {
   return (
     <Navigator initialRouteName="Profile" activeColor="white">
-      {/* <Screen
-        name="AllTrips"
-        component={ProfileTripList}
-        options={{
-          tabBarIcon: () => (
-            <EntypoIcon name="paper-plane" color="white" size={20} />
-          ),
-        }}
-      /> */}
       <Screen
-        name="OwnerProfile"
-        component={OwnerProfile}
+        name="AllTrips"
+        component={AllTripNav}
         options={{
           tabBarIcon: () => (
             <EntypoIcon name="paper-plane" color="white" size={20} />
           ),
         }}
       />
+
       <Screen
         name="Profile"
         component={ProfileNav}

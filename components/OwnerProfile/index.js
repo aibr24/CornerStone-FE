@@ -24,16 +24,7 @@ import tripStore from "../../stores/tripStore";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
 const OwnerProfile = ({ route }) => {
-  //   const { profile } = route.params;
-  const profile = {
-    id: 4,
-    bio: "",
-    image: "",
-    userId: 6,
-    user: {
-      username: "user100",
-    },
-  };
+  const { profile } = route.params;
 
   const listOfTrips = tripStore.trips.filter(
     (item) => item.userId === profile.userId

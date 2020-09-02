@@ -5,15 +5,17 @@ import { BoxItemContainer, BoxItemImage, BoxItemText } from "./styles";
 import profileStore from "../../stores/profileStore";
 import { Thumbnail } from "native-base";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import { useNavigation } from "@react-navigation/native";
+useNavigation;
 
-const ProfileTripItem = ({ trip, navigation }) => {
+const ProfileTripItem = ({ trip }) => {
   const foundProfile = profileStore.getProfileById(trip.userId);
-
+  const navigation = useNavigation();
   return (
     <BoxItemContainer>
       <TouchableOpacity
         onPress={() =>
-          navigation.navigate("ProfileDetail", { profile: foundProfile })
+          navigation.navigate("OwnerProfile", { profile: foundProfile })
         }
       >
         <BoxItemText>{trip.user.username}</BoxItemText>
