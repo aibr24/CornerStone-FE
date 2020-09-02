@@ -22,13 +22,15 @@ import profileStore from "../../stores/profileStore";
 import authStore from "../../stores/authStore";
 import tripStore from "../../stores/tripStore";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import ProfileTripItem from "../ProfileTripList/ProfileTripItem";
+import { BoxListContainer } from "../ProfileTripList/styles";
 
 const OwnerProfile = ({ route }) => {
   const { profile } = route.params;
 
-  const listOfTrips = tripStore.trips.filter(
-    (item) => item.userId === profile.userId
-  );
+  const listOfTrips = tripStore.trips
+    .filter((item) => item.userId === profile.userId)
+    .map((item) => <ProfileTripItem trip={item} key={item.id} />);
 
   return (
     <ProfileContainer>
@@ -56,14 +58,11 @@ const OwnerProfile = ({ route }) => {
 
       <StatsContainerStyled>
         <StatsBoxStyled>
-          <TouchableOpacity onPress={() => navigation.navigate("MyTrips")}>
-            <TextStyled style={{ fontSize: 24 }}>
-              {listOfTrips.length}
-            </TextStyled>
-            <TextStyled className="subText">My Trips</TextStyled>
-          </TouchableOpacity>
+          <TextStyled style={{ fontSize: 24 }}>{listOfTrips.length}</TextStyled>
+          <TextStyled className="subText">My Trips</TextStyled>
         </StatsBoxStyled>
       </StatsContainerStyled>
+      <BoxListContainer>{listOfTrips}</BoxListContainer>
 
       {/* <View style={{ marginTop: 32 }}>
           <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>

@@ -1,6 +1,5 @@
 import React from "react";
 import { observer } from "mobx-react";
-import { useNavigation } from "@react-navigation/native";
 
 // Styles
 import { Text } from "react-native";
@@ -11,8 +10,7 @@ import { TripName } from "./styles";
 import UpdateTrip from "../buttons/UpdateTrip";
 import DeleteButton from "../buttons/DeleteButton";
 
-const TripItem = ({ trip }) => {
-  const navigation = useNavigation();
+const TripItem = ({ trip, navigation }) => {
   return (
     <ListItem avatar>
       <Left>

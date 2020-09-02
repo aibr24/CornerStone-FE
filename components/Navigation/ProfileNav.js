@@ -30,7 +30,7 @@ const ProfileNav = () => {
     >
       <Stack.Screen name="MyTrips" component={TripList} />
       <Stack.Screen name="Trip Detail" component={TripDetail} />
-      <Stack.Screen name="Signin" component={Signin} />
+      <Stack.Screen name="Signin" component={Signin} options={{}} />
       <Stack.Screen name="Profile" component={Profile} />
     </Stack.Navigator>
   );

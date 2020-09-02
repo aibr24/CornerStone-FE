@@ -8,8 +8,8 @@ import ProfileTripItem from "./ProfileTripItem";
 // Stores
 import tripStore from "../../stores/tripStore";
 import authStore from "../../stores/authStore";
-import { List, View, Container } from "native-base";
 import { ScrollView } from "react-native";
+import { List } from "native-base";
 
 const ProfileTripList = () => {
   let listOfTrips = [];

@@ -1,6 +1,5 @@
 import React from "react";
 import { observer } from "mobx-react";
-import { useNavigation } from "@react-navigation/native";
 
 //Styles
 import AddTrip from "./AddTrip";
@@ -13,14 +12,14 @@ import TripItem from "./TripItem";
 import tripStore from "../../stores/tripStore";
 import authStore from "../../stores/authStore";
 
-const TripList = () => {
-  const navigation = useNavigation();
-
-  let listOfTrips = [];
-
-  listOfTrips = tripStore.trips
-    .filter((item) => item.userId == authStore.user.id)
-    .map((item) => <TripItem trip={item} key={item.id} />);
+const TripList = ({ navigation }) => {
+  const listOfTrips = authStore.user
+    ? tripStore.trips
+        .filter((item) => item.userId === authStore.user.id)
+        .map((item) => (
+          <TripItem trip={item} key={item.id} navigation={navigation} />
+        ))
+    : [];
 
   return (
     <Content>
