@@ -3,7 +3,7 @@ import { observer } from "mobx-react";
 import { useNavigation } from "@react-navigation/native";
 
 //Styles
-import AddTrip from "./AddTrips";
+import AddTrip from "./AddTrip";
 import { Content, List } from "native-base";
 
 //Components
