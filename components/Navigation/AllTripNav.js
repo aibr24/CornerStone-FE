@@ -3,7 +3,7 @@ import React from "react";
 // Navigators
 import { createStackNavigator } from "@react-navigation/stack";
 import ProfileTripList from "../ProfileTripList/index";
-
+import OwnerProfile from "../OwnerProfile";
 const Stack = createStackNavigator();
 
 const ProfileNav = () => {
@@ -20,6 +20,7 @@ const ProfileNav = () => {
         },
       }}
     >
+      <Stack.Screen name="OwnerProfile" component={OwnerProfile} />
       <Stack.Screen name="AllTrips" component={ProfileTripList} />
     </Stack.Navigator>
   );
