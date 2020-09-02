@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import { View } from "native-base";
+import { View, Card } from "native-base";
 
 export const BoxListContainer = styled.View`
   width: 100%;
-  height: 85%;
+  height: 50%;
   padding: 5px;
   flex-direction: row;
   flex-wrap: wrap;
@@ -17,7 +17,7 @@ export const BoxItemContainer = styled.View`
 
 export const BoxItemImage = styled.Image`
   width: 100%;
-  height: 60%;
+  height: 100%;
   justify-content: center;
 `;
 
