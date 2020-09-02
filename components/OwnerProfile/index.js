@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { observer } from "mobx-react";
 
 // Components
 
 // Styles
-import { View } from "react-native";
+import { View, ScrollView } from "react-native";
 import {
   ProfileContainer,
   ProfileImage,
@@ -18,8 +18,6 @@ import {
 } from "./styles";
 
 // Stores
-import profileStore from "../../stores/profileStore";
-import authStore from "../../stores/authStore";
 import tripStore from "../../stores/tripStore";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import ProfileTripItem from "../ProfileTripList/ProfileTripItem";
@@ -62,7 +60,7 @@ const OwnerProfile = ({ route }) => {
           <TextStyled className="subText">My Trips</TextStyled>
         </StatsBoxStyled>
       </StatsContainerStyled>
-      <BoxListContainer>{listOfTrips}</BoxListContainer>
+      <ScrollView>{listOfTrips}</ScrollView>
 
       {/* <View style={{ marginTop: 32 }}>
           <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
