@@ -39,9 +39,7 @@ const ProfileTripItem = ({ trip }) => {
         </Body>
       </CardItem>
       <TouchableOpacity
-        onPress={() =>
-          navigation.navigate("OwnerProfile", { profile: foundProfile })
-        }
+        onPress={() => navigation.navigate("Trip Detail", { trip: trip })}
       >
         <CardItem cardBody>
           <Image
