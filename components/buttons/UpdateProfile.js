@@ -27,14 +27,11 @@ const UpdateProfile = ({ profile }) => {
     profileStore.updateProfile(oldProfile);
     closeModal();
   };
+
   const handleUpdate = () => {
-    // REVIEW: if the user is not the trip owner are not supposed to see the button نهائياً. So this condition is not necessary. Remove it.
-    if (authStore.user.id === profile.userId) {
-      openModal();
-    } else {
-      alert("Un-Authorized!");
-    }
+    openModal();
   };
+
   return (
     <View>
       <Modal animationType="slide" transparent={true} visible={isOpen}>

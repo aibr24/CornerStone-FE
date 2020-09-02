@@ -2,12 +2,12 @@ import React from "react";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 
 // Components
-import AllTrips from "../TripList/AllTrips";
+import ProfileTripList from "../ProfileTripList";
+import ProfileNav from "./ProfileNav";
+
 // Styles
 import EntypoIcon from "react-native-vector-icons/Entypo";
 import AntDesignIcon from "react-native-vector-icons/AntDesign";
-import ProfileNav from "./ProfileNav";
-import ProfileTripList from "../ProfileTripList";
 
 const { Navigator, Screen } = createMaterialBottomTabNavigator();
 

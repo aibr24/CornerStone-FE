@@ -39,4 +39,5 @@ export const AddTextInput = styled.TextInput`
 export const TrashIcon = styled(Icon)`
   color: black;
   font-size: 25px;
+  padding: 10px;
 `;

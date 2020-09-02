@@ -14,6 +14,8 @@ import {
 // Stores
 import authStore from "../../stores/authStore";
 import { useNavigation } from "@react-navigation/native";
+import { TouchableOpacity } from "react-native-gesture-handler";
+import Signup from "./Signup";
 
 function Signin() {
   const navigation = useNavigation();
@@ -45,9 +47,7 @@ function Signin() {
       <AuthButton onPress={handleSubmit}>
         <AuthButtonText>Sign in</AuthButtonText>
       </AuthButton>
-      <AuthOther onPress={() => navigation.navigate("Signup")}>
-        Click here to register!
-      </AuthOther>
+      <Signup />
     </AuthContainer>
   );
 }
