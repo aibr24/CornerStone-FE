@@ -8,6 +8,8 @@ import ProfileTripItem from "./ProfileTripItem";
 // Stores
 import tripStore from "../../stores/tripStore";
 import authStore from "../../stores/authStore";
+import { List, View, Container } from "native-base";
+import { ScrollView } from "react-native";
 
 const ProfileTripList = () => {
   let listOfTrips = [];
@@ -16,7 +18,12 @@ const ProfileTripList = () => {
     listOfTrips = tripStore.trips
       .filter((item) => item.userId !== authStore.user.id)
       .map((item) => <ProfileTripItem trip={item} key={item.id} />);
-  return <BoxListContainer>{listOfTrips}</BoxListContainer>;
+  return (
+    <ScrollView>
+      {/* <BoxListContainer>{listOfTrips}</BoxListContainer> */}
+      {listOfTrips}
+    </ScrollView>
+  );
 };
 
 export default observer(ProfileTripList);
