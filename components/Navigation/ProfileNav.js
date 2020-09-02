@@ -2,8 +2,7 @@ import React from "react";
 
 // Components
 import Signin from "../authentication/Signin";
-// REVIEW: Singup??
-import Singup from "../authentication/Signup";
+
 import SignoutButton from "../buttons/SignoutButton";
 
 // Navigators
@@ -32,7 +31,6 @@ const ProfileNav = () => {
       <Stack.Screen name="MyTrips" component={TripList} />
       <Stack.Screen name="Trip Detail" component={TripDetail} />
       <Stack.Screen name="Signin" component={Signin} />
-      <Stack.Screen name="Signup" component={Singup} />
       <Stack.Screen name="Profile" component={Profile} />
     </Stack.Navigator>
   );

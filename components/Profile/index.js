@@ -23,12 +23,8 @@ import profileStore from "../../stores/profileStore";
 import authStore from "../../stores/authStore";
 import tripStore from "../../stores/tripStore";
 import { TouchableOpacity } from "react-native-gesture-handler";
-import { useNavigation } from "@react-navigation/native";
 
-const Profile = () => {
-  // REVIEW: Profile is a whole screen? Why are you using `useNavigation`?????? REMOVE IT!!!
-  const navigation = useNavigation();
-
+const Profile = ({ navigation }) => {
   let profile = null;
   if (authStore.user) profile = profileStore.getProfileById(authStore.user.id);
 
@@ -65,7 +61,7 @@ const Profile = () => {
 
       <StatsContainerStyled>
         <StatsBoxStyled>
-          <TouchableOpacity onPress={navigation.navigate("MyTrips")}>
+          <TouchableOpacity onPress={() => navigation.navigate("MyTrips")}>
             <TextStyled style={{ fontSize: 24 }}>
               {listOfTrips.length}
             </TextStyled>

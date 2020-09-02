@@ -18,12 +18,9 @@ const TripList = () => {
 
   let listOfTrips = [];
 
-  // REVIEW: You can't throw navigation.navigate inside a component like this
-  authStore.user
-    ? (listOfTrips = tripStore.trips
-        .filter((item) => item.userId == authStore.user.id)
-        .map((item) => <TripItem trip={item} key={item.id} />))
-    : navigation.navigate("Signin");
+  listOfTrips = tripStore.trips
+    .filter((item) => item.userId == authStore.user.id)
+    .map((item) => <TripItem trip={item} key={item.id} />);
 
   return (
     <Content>

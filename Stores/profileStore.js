@@ -4,8 +4,8 @@ import instance from "./instance";
 class ProfileStore {
   profiles = [];
 
-  getProfileById = (user) =>
-    this.profiles.find((profile) => profile.userId === user);
+  getProfileById = (ownerId) =>
+    this.profiles.find((profile) => profile.userId === ownerId);
 
   fetchProfiles = async () => {
     try {

@@ -7,26 +7,15 @@ import { TrashIcon } from "./styles";
 
 // Stores
 import tripStore from "../../stores/tripStore";
-import authStore from "../../stores/authStore";
 
 const DeleteButton = ({ trip }) => {
   handleDelete = () => {
-    // REVIEW: if the user is not the trip owner are not supposed to see the button نهائياً. So this condition is not necessary. Remove it.
-    if (authStore.user.id === trip.userId) {
-      tripStore.deleteTrip(trip.id);
-    } else {
-      alert("un-Authorized!");
-    }
+    tripStore.deleteTrip(trip.id);
   };
   return (
     <View>
       <TouchableOpacity onPress={handleDelete}>
-        <TrashIcon
-          // REVIEW: What did we say about inline styling?
-          name="trash-alt"
-          type="FontAwesome5"
-          style={{ padding: 10 }}
-        />
+        <TrashIcon name="trash-alt" type="FontAwesome5" />
       </TouchableOpacity>
     </View>
   );

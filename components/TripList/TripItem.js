@@ -8,7 +8,7 @@ import { Left, Thumbnail, Body, ListItem } from "native-base";
 import { TripName } from "./styles";
 
 // Components
-import UpdateButton from "../buttons/UpdateButton";
+import UpdateTrip from "../buttons/UpdateTrip";
 import DeleteButton from "../buttons/DeleteButton";
 
 const TripItem = ({ trip }) => {
@@ -39,7 +39,7 @@ const TripItem = ({ trip }) => {
         </Text>
       </Body>
       <DeleteButton trip={trip} />
-      <UpdateButton trip={trip} />
+      <UpdateTrip trip={trip} />
     </ListItem>
   );
 };
