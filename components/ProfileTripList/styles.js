@@ -7,6 +7,7 @@ export const BoxListContainer = styled.View`
   padding: 5px;
   flex-direction: row;
   flex-wrap: wrap;
+  flex: 1;
 `;
 
 export const BoxItemContainer = styled.View`
