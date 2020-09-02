@@ -13,6 +13,8 @@ const ProfileTripItem = ({ trip }) => {
   const foundProfile = profileStore.getProfileById(trip.userId);
   const navigation = useNavigation();
   return (
+    //the code below is left, to keep the option for design choices
+
     // <BoxItemContainer>
     //   {/* <TouchableOpacity
     //     onPress={() =>
