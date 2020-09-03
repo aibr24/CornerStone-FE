@@ -28,9 +28,9 @@ const Profile = ({ navigation }) => {
   let profile = null;
   if (authStore.user) profile = profileStore.getProfileById(authStore.user.id);
 
-  const listOfTrips = tripStore.trips.filter(
-    (item) => item.userId === authStore.user.id
-  );
+  const listOfTrips = authStore.user
+    ? tripStore.trips.filter((item) => item.userId === authStore.user.id)
+    : [];
 
   return (
     <ProfileContainer>
