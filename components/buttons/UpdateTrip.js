@@ -1,19 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import * as Permissions from "expo-permissions";
+import * as ImagePicker from "expo-image-picker";
+import { View, Modal } from "react-native";
 
 // Styles
-import { View, Modal } from "react-native";
 import Icon from "react-native-vector-icons/Feather";
 import {
   AddButtonStyled,
   AddButtonText,
   AddModalContainer,
   AddTextInput,
+  ImagePickerButton,
+  ImagePickerText,
 } from "./styles";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
 // Stores
 import tripStore from "../../stores/tripStore";
-import authStore from "../../stores/authStore";
 
 const UpdateTrip = ({ trip }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,6 +32,32 @@ const UpdateTrip = ({ trip }) => {
   const handleUpdate = () => {
     openModal();
   };
+
+  const getPermissionAsync = async () => {
+    if (Platform.OS !== "web") {
+      const { status } = await Permissions.askAsync(Permissions.CAMERA_ROLL);
+      if (status !== "granted") {
+        alert("Sorry, we need camera roll permissions to make this work!");
+      }
+    }
+  };
+
+  const _pickImage = async () => {
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.All,
+      allowsEditing: true,
+      aspect: [4, 3],
+      quality: 1,
+    });
+    let imagePicked = result.uri;
+    setOldTrip({ ...oldTrip, image: imagePicked });
+    console.log(oldTrip.image);
+  };
+
+  useEffect(() => {
+    getPermissionAsync();
+  }, []);
+
   return (
     <View>
       <Modal animationType="slide" transparent={true} visible={isOpen}>
@@ -43,9 +72,15 @@ const UpdateTrip = ({ trip }) => {
             placeholder={trip.details}
             placeholderTextColor="#A6AEC1"
           ></AddTextInput>
-          <AddTextInput
-            onChangeText={(image) => setOldTrip({ ...oldTrip, image })}
-          ></AddTextInput>
+          <ImagePickerButton onPress={() => _pickImage()}>
+            <ImagePickerText
+              placeholder="Press Here To Pick An Image"
+              placeholderTextColor="#A6AEC1"
+              onChangeText={(image) => setOldTrip({ ...oldTrip, image })}
+            >
+              Press Here to Add Image
+            </ImagePickerText>
+          </ImagePickerButton>
           <AddButtonStyled onPress={submitTrip}>
             <AddButtonText>Submit</AddButtonText>
           </AddButtonStyled>
