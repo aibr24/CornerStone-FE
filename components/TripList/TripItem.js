@@ -9,6 +9,7 @@ import { TripName } from "./styles";
 // Components
 import UpdateTrip from "../buttons/UpdateTrip";
 import DeleteButton from "../buttons/DeleteButton";
+import FavoriteButton from "../buttons/FavoriteButton";
 
 const TripItem = ({ trip, navigation }) => {
   return (
@@ -36,6 +37,7 @@ const TripItem = ({ trip, navigation }) => {
           {trip.details}
         </Text>
       </Body>
+      <FavoriteButton />
       <DeleteButton trip={trip} />
       <UpdateTrip trip={trip} />
     </ListItem>
