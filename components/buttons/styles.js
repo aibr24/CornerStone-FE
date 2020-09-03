@@ -41,3 +41,28 @@ export const TrashIcon = styled(Icon)`
   font-size: 25px;
   padding: 10px;
 `;
+
+export const ImagePickerButton = styled.TouchableOpacity`
+  background-color: #253941;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  width: 260px;
+  height: 40px;
+  border: solid;
+  border-color: #a6aec1;
+  border-bottom-color: #ff6900;
+  border-right-color: #e65f00;
+  border-left-color: #e65f00;
+  border-top-color: #cd5500;
+  border-radius: 8;
+  elevation: 8;
+`;
+
+export const ImagePickerText = styled.Text`
+  align-self: stretch;
+  text-align: center;
+  height: 40px;
+  margin-top: 10px;
+
+  color: #a6aec1;
+`;

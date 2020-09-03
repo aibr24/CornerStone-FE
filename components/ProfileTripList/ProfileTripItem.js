@@ -13,26 +13,6 @@ const ProfileTripItem = ({ trip }) => {
   const foundProfile = profileStore.getProfileById(trip.userId);
   const navigation = useNavigation();
   return (
-    //the code below is left, to keep the option for design choices
-
-    // <BoxItemContainer>
-    //   {/* <TouchableOpacity
-    //     onPress={() =>
-    //       navigation.navigate("OwnerProfile", { profile: foundProfile })
-    //     }
-    //   > */}
-    //   <BoxItemText>{trip.user.username}</BoxItemText>
-    //   <BoxItemText>{trip.title}</BoxItemText>
-    //   <BoxItemImage
-    //     source={{
-    //       uri: trip.image
-    //         ? trip.image
-    //         : "https://media-cdn.tripadvisor.com/media/photo-s/0e/9a/e3/1d/freedom-tower.jpg",
-    //     }}
-    //   />
-    //   {/* </TouchableOpacity> */}
-    // </BoxItemContainer>
-
     <Card>
       <CardItem>
         <Body>
