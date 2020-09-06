@@ -11,7 +11,7 @@ const Stack = createStackNavigator();
 const ProfileNav = () => {
   return (
     <Stack.Navigator
-      initialRouteName="AllTrips"
+      initialRouteName="Trips"
       screenOptions={{
         headerTintColor: "white",
         headerStyle: {
@@ -23,7 +23,7 @@ const ProfileNav = () => {
       }}
     >
       <Stack.Screen name="OwnerProfile" component={OwnerProfile} />
-      <Stack.Screen name="AllTrips" component={ProfileTripList} />
+      <Stack.Screen name="Trips" component={ProfileTripList} />
       <Stack.Screen name="Trip Detail" component={TripDetail} />
     </Stack.Navigator>
   );

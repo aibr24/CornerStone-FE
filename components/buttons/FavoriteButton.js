@@ -6,20 +6,8 @@ import tripStore from "../../stores/tripStore";
 import { observer } from "mobx-react";
 
 const FavoriteButton = ({ trip }) => {
-  const [fav, setFav] = useState(false);
-
-  const [oldTrip, setOldTrip] = useState(trip);
-
-  // const handleStateUpdate = () => {
-  //   setOldTrip({ ...oldTrip, fav: !fav });
-  // };
-
   const handleToggle = () => {
-    // handleStateUpdate();
-    setFav(!fav);
-    setOldTrip({ ...oldTrip, fav: fav });
-    tripStore.updateTrip(oldTrip);
-    // setFav(!fav);
+    tripStore.updateTrip({ ...trip, fav: !trip.fav });
   };
   const handleFav = trip.fav ? (
     <Icon name="favorite" size={30} />
