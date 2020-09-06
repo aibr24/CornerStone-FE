@@ -13,7 +13,6 @@ const Question = ({ trip }) => {
   });
 
   const handleSubmit = () => {
-    console.log(comment);
     commentStore.createComment(comment);
   };
 
