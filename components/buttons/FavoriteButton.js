@@ -2,17 +2,29 @@ import React, { useState } from "react";
 import { View, Text } from "native-base";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import Icon from "react-native-vector-icons/MaterialIcons";
+import tripStore from "../../stores/tripStore";
+import { observer } from "mobx-react";
 
-const FavoriteButton = () => {
-  const [fav, setFav] = useState(true);
+const FavoriteButton = ({ trip }) => {
+  const [fav, setFav] = useState(false);
+
+  const [oldTrip, setOldTrip] = useState(trip);
+
+  // const handleStateUpdate = () => {
+  //   setOldTrip({ ...oldTrip, fav: !fav });
+  // };
 
   const handleToggle = () => {
+    // handleStateUpdate();
     setFav(!fav);
+    setOldTrip({ ...oldTrip, fav: fav });
+    tripStore.updateTrip(oldTrip);
+    // setFav(!fav);
   };
-  const handleFav = fav ? (
-    <Icon name="favorite-border" size={30} />
-  ) : (
+  const handleFav = trip.fav ? (
     <Icon name="favorite" size={30} />
+  ) : (
+    <Icon name="favorite-border" size={30} />
   );
 
   return (
@@ -21,4 +33,4 @@ const FavoriteButton = () => {
     </View>
   );
 };
-export default FavoriteButton;
+export default observer(FavoriteButton);

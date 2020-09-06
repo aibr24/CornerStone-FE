@@ -37,7 +37,7 @@ const TripItem = ({ trip, navigation }) => {
           {trip.details}
         </Text>
       </Body>
-      <FavoriteButton />
+      <FavoriteButton trip={trip} />
       <DeleteButton trip={trip} />
       <UpdateTrip trip={trip} />
     </ListItem>
