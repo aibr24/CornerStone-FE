@@ -25,7 +25,7 @@ class TripStore {
   updateTrip = async (oldTrip) => {
     try {
       await instance.put(`/trips/${oldTrip.id}`, oldTrip);
-      const foundTrip = this.trips.find((trip) => trip.id === oldTrip.id);
+      const foundTrip = await this.trips.find((trip) => trip.id === oldTrip.id);
       for (const key in oldTrip) foundTrip[key] = oldTrip[key];
     } catch (error) {
       console.log("TRIP-STORE >> updateTrip() --->", error);
