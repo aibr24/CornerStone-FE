@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
-import * as Permissions from "expo-permissions";
-import * as ImagePicker from "expo-image-picker";
 import { View, Modal } from "react-native";
 
-// Styles
+//Libraries
+import * as Permissions from "expo-permissions";
+import * as ImagePicker from "expo-image-picker";
+import { TouchableOpacity } from "react-native-gesture-handler";
 import Icon from "react-native-vector-icons/Feather";
+
+// Styles
 import {
   AddButtonStyled,
   AddButtonText,
@@ -13,7 +16,6 @@ import {
   ImagePickerButton,
   ImagePickerText,
 } from "./styles";
-import { TouchableOpacity } from "react-native-gesture-handler";
 
 // Stores
 import tripStore from "../../stores/tripStore";
