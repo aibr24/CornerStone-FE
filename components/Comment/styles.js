@@ -15,3 +15,7 @@ export const QuestionInput = styled.TextInput`
   justify-content: center;
   margin-left: 20px;
 `;
+
+export const AnswerContainer = styled.View`
+  flex-direction: row;
+`;

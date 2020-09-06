@@ -4,6 +4,9 @@ import { Thumbnail, Card, CardItem, Body, Left } from "native-base";
 import { TripName } from "./styles";
 import profileStore from "../../stores/profileStore";
 import Question from "../Comment/Question";
+import authStore from "../../stores/authStore";
+import Answer from "../Comment/Answer";
+import { observer } from "mobx-react";
 const TripDetail = ({ route, navigation }) => {
   const { trip } = route.params;
   const profile = profileStore.getProfileById(trip.userId);
@@ -48,9 +51,13 @@ const TripDetail = ({ route, navigation }) => {
           </Body>
         </CardItem>
       </Card>
-      <Question trip={trip} />
+      {authStore.user.id === trip.userId ? (
+        <Answer trip={trip} />
+      ) : (
+        <Question trip={trip} />
+      )}
     </View>
   );
 };
 
-export default TripDetail;
+export default observer(TripDetail);

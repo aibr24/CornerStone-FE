@@ -8,9 +8,8 @@ class CommentStore {
     try {
       const res = await instance.get("/comments");
       this.comments = res.data;
-      console.log(comments);
     } catch (error) {
-      console.log("TRIP-STORE >> fetchComments() --->", error);
+      console.log("Comment-STORE >> fetchComments() --->", error);
     }
   };
 
@@ -29,10 +28,11 @@ class CommentStore {
   updateComment = async (oldComment) => {
     try {
       await instance.put(`/comments/${oldComment.id}`, oldComment);
-      const foundComment = this.comments.find(
+      const foundCommentIndex = this.comments.findIndex(
         (comment) => comment.id === oldComment.id
       );
-      for (const key in oldComment) foundComment[key] = oldComment[key];
+      // This line will force the FlatList to update, bravo Laila
+      this.comments[foundCommentIndex] = oldComment;
     } catch (error) {
       console.log("TRIP-STORE >> updateComment() --->", error);
     }
