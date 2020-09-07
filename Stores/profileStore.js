@@ -18,7 +18,7 @@ class ProfileStore {
 
   updateProfile = async (oldProfile) => {
     try {
-      await instance.put(`/profiles/${oldProfile.id}`, oldProfile);
+      await instance.put(`/profiles`, oldProfile);
       const foundProfile = this.profiles.find(
         (profile) => profile.id === oldProfile.id
       );
