@@ -5,7 +5,7 @@ export const AuthContainer = styled.View`
   align-self: stretch;
   justify-content: center;
   align-items: center;
-  background-color: #1b262c;
+  background-color: #393e46;
   padding-right: 60px;
   padding-left: 60px;
 `;
@@ -23,23 +23,24 @@ export const AuthTextInput = styled.TextInput`
   height: 40px;
   margin-bottom: 30px;
   color: #decdc3;
-  border-bottom-color: #ff6900;
+  border-bottom-color: #32e0c4;
   border-bottom-width: 1px;
 `;
 export const AuthButton = styled.TouchableOpacity`
   align-self: stretch;
   align-items: center;
   padding: 20px;
-  background-color: #2f4751;
+  background-color: #32e0c4;
   margin-top: 30px;
+  border-radius: 7px;
 `;
 
 export const AuthButtonText = styled.Text`
-  color: #fcfdff;
+  color: #222831;
   font-weight: bold;
   font-size: 18px;
 `;
 export const AuthOther = styled.Text`
-  color: red;
+  color: #eeeeee;
   margin-top: 15px;
 `;

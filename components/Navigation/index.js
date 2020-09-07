@@ -13,9 +13,13 @@ const { Navigator, Screen } = createMaterialBottomTabNavigator();
 
 const MyTabs = () => {
   return (
-    <Navigator initialRouteName="AllTrips" activeColor="white">
+    <Navigator
+      initialRouteName="Trips"
+      activeColor="white"
+      barStyle={{ backgroundColor: "#111" }}
+    >
       <Screen
-        name="AllTrips"
+        name="Trips"
         component={AllTripNav}
         options={{
           tabBarIcon: () => (
