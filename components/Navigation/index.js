@@ -14,7 +14,7 @@ const { Navigator, Screen } = createMaterialBottomTabNavigator();
 const MyTabs = () => {
   return (
     <Navigator
-      initialRouteName="Trips"
+      initialRouteName="Profile"
       activeColor="white"
       barStyle={{ backgroundColor: "#111" }}
     >

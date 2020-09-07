@@ -17,17 +17,17 @@ import { useNavigation } from "@react-navigation/native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import Signup from "./Signup";
 
-function Signin() {
-  const navigation = useNavigation();
-
+function Signin({ navigation }) {
   const [user, setUser] = useState({
     username: "",
     password: "",
   });
 
+  if (authStore.user) navigation.replace("MyTabs");
+
   const handleSubmit = async () => {
     await authStore.signin(user);
-    if (authStore.user) navigation.replace("Profile");
+    if (authStore.user) navigation.replace("MyTabs");
   };
   return (
     <AuthContainer>

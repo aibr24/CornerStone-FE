@@ -14,8 +14,10 @@ import { View, Modal } from "react-native";
 // Stores
 import authStore from "../../stores/authStore";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import { useNavigation } from "@react-navigation/native";
 
 function Signup() {
+  const navigation = useNavigation();
   const [isOpen, setIsOpen] = useState(false);
   const closeModal = () => setIsOpen(false);
   const openModal = () => setIsOpen(true);
@@ -31,6 +33,7 @@ function Signup() {
   const handleSubmit = () => {
     authStore.signup(user);
     closeModal();
+    navigation.replace("MyTabs");
   };
 
   return (
