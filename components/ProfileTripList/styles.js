@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { View, Card } from "native-base";
+import { Card } from "native-base";
+import { View, ImageBackground } from "react-native";
 
 export const BoxListContainer = styled.View`
   width: 100%;
@@ -25,4 +26,28 @@ export const BoxItemImage = styled.Image`
 export const BoxItemText = styled.Text`
   color: black;
   font-weight: bold;
+`;
+
+export const Container = styled.View`
+  height: 30%;
+  background-color: #1b262c;
+`;
+
+export const DarkOVerlay = styled.View`
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 250px;
+  background-color: #000;
+  border-bottom-right-radius: 65px;
+  opacity: 1;
+`;
+
+export const ImageOverlay = styled(ImageBackground)`
+  width: 100%;
+  height: 250px;
+  border-bottom-right-radius: 65px;
+  padding: 2px;
+  margin: auto;
 `;

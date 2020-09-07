@@ -9,6 +9,7 @@ const FavoriteButton = ({ trip }) => {
   const handleToggle = () => {
     tripStore.updateTrip({ ...trip, fav: !trip.fav });
   };
+  //ui should update seperate form backend.
   const handleFav = trip.fav ? (
     <Icon name="favorite" size={30} />
   ) : (
