@@ -15,7 +15,7 @@ const ProfileNav = () => {
       screenOptions={{
         headerTintColor: "white",
         headerStyle: {
-          backgroundColor: "#4c525c",
+          backgroundColor: "#393e46",
         },
         headerTitleStyle: {
           fontWeight: "bold",
