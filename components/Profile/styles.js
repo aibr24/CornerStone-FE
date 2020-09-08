@@ -4,10 +4,11 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 
 export const ProfileContainer = styled.SafeAreaView`
   flex: 1;
-  background-color: #fff;
+  background-color: #393e46;
 `;
 
 export const ProfileImage = styled.View`
+  margin-top: 50px;
   width: 200;
   height: 200;
   border-radius: 100;
@@ -58,7 +59,7 @@ export const InfoContainer = styled.View`
   margin-top: 16;
 `;
 export const TextStyled = styled.Text`
-  color: #52575d;
+  color: #eee;
 
   &.subText {
     font-size: 12;

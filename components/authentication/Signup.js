@@ -9,12 +9,14 @@ import {
   AuthButtonText,
   AuthOther,
 } from "./styles";
-import { View, Modal } from "react-native";
+import { View, Modal, Button } from "react-native";
 
 // Stores
 import authStore from "../../stores/authStore";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import { Text } from "native-base";
+import profileStore from "../../stores/profileStore";
 
 function Signup() {
   const navigation = useNavigation();
@@ -71,6 +73,9 @@ function Signup() {
           <AuthButton onPress={handleSubmit}>
             <AuthButtonText>Sign up</AuthButtonText>
           </AuthButton>
+          <TouchableOpacity onPress={() => closeModal()}>
+            <Text style={{ marginTop: 20, color: "#bbe1fa" }}>Cancel</Text>
+          </TouchableOpacity>
         </AuthContainer>
       </Modal>
       <TouchableOpacity onPress={() => openModal()}>

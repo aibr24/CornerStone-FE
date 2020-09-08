@@ -11,7 +11,7 @@ export const AddButtonStyled = styled.TouchableOpacity`
 `;
 
 export const AddButtonText = styled.Text`
-  color: #fcfdff;
+  color: #bbe1fa;
   font-weight: bold;
   font-size: 18px;
 `;
@@ -21,7 +21,7 @@ export const AddModalContainer = styled.View`
   align-self: stretch;
   justify-content: center;
   align-items: center;
-  background-color: #1b262c;
+  background-color: #393e46;
   padding-right: 60px;
   padding-left: 60px;
 `;
@@ -32,7 +32,7 @@ export const AddTextInput = styled.TextInput`
   height: 40px;
   margin-bottom: 30px;
   color: #decdc3;
-  border-bottom-color: #ff6900;
+  border-bottom-color: #bbe1fa;
   border-bottom-width: 1px;
 `;
 
@@ -50,10 +50,10 @@ export const ImagePickerButton = styled.TouchableOpacity`
   height: 40px;
   border: solid;
   border-color: #a6aec1;
-  border-bottom-color: #ff6900;
-  border-right-color: #e65f00;
-  border-left-color: #e65f00;
-  border-top-color: #cd5500;
+  border-bottom-color: #bbe1fa;
+  border-right-color: #bbe1fa;
+  border-left-color: #bbe1fa;
+  border-top-color: #bbe1fa;
   border-radius: 8;
   elevation: 8;
 `;

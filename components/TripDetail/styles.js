@@ -64,7 +64,7 @@ export const ButtonStyled = styled.TouchableOpacity`
   background-color: rgba(255, 255, 255, 0.3);
 `;
 export const TextBackground = styled.View`
-  margin: 1px
+  margin: 1px;
   background-color: rgba(0, 0, 0, 0.75);
   border-bottom-left-radius: 25px;
   border-top-right-radius: 25px;
@@ -72,11 +72,11 @@ export const TextBackground = styled.View`
 `;
 
 export const TripContainer = styled.View`
-margin-top: -24px
-padding: 10px;
-background-color: #393e46;
-border-top-left-radius: 24px;
-border-top-right-radius: 24px;
+  margin-top: -24px;
+  padding: 10px;
+  background-color: #393e46;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
 `;
 
 export const LowerBox = styled.View`
