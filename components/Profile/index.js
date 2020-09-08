@@ -47,7 +47,6 @@ const Profile = ({ navigation }) => {
             }}
           ></ImageStyled>
         </ProfileImage>
-        <ActiveStyled></ActiveStyled>
         <AddStyled>
           <UpdateProfile profile={profile} />
         </AddStyled>
