@@ -41,16 +41,15 @@ const ProfileTripList = () => {
   return (
     <View style={{ backgroundColor: "#1b262c" }}>
       <Container style={{ paddingVertical: 20 }}>
-        <DarkOVerlay>
-          <ImageOverlay
-            source={image}
-            imageStyle={{ borderBottomRightRadius: 65 }}
-          ></ImageOverlay>
-        </DarkOVerlay>
+        <DarkOVerlay></DarkOVerlay>
+        <ImageOverlay
+          source={image}
+          imageStyle={{ borderBottomRightRadius: 65 }}
+        ></ImageOverlay>
       </Container>
       {/* lightblue bbe1fa , greyish 1b262c*/}
       <View style={{ backgroundColor: "#1b262c", marginTop: 40 }}>
-        <View style={{ paddingVertical: 10, paddingHorizontal: 25 }}>
+        <View style={{ paddingVertical: 10, paddingHorizontal: 15 }}>
           <Text style={{ fontSize: 25, fontWeight: "bold", color: "#bbe1fa" }}>
             Trips
           </Text>
@@ -98,7 +97,7 @@ const ProfileTripList = () => {
                           color: "#fff",
                           marginTop: -4,
                           bottom: 7,
-                          marginLeft: 30,
+                          marginLeft: 8,
                           fontWeight: "bold",
                         }}
                       >

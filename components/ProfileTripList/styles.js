@@ -38,16 +38,19 @@ export const DarkOVerlay = styled.View`
   top: 0;
   right: 0;
   left: 0;
-  height: 250px;
-  background-color: #000;
+  height: 260px;
+  background-color: #bbe1fa;
   border-bottom-right-radius: 65px;
   opacity: 1;
 `;
 
 export const ImageOverlay = styled(ImageBackground)`
   width: 100%;
-  height: 250px;
+  position: absolute;
+  top: 0;
+  right: 0.5;
+  height: 257px;
   border-bottom-right-radius: 65px;
-  padding: 2px;
+
   margin: auto;
 `;
