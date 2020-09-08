@@ -66,10 +66,10 @@ const Profile = ({ navigation }) => {
 
         <StatsContainerStyled>
           <StatsBoxStyled>
+            <TextStyled className="subText">My Trips</TextStyled>
             <TextStyled style={{ fontSize: 24 }}>
               {listOfTrips.length}
             </TextStyled>
-            <TextStyled className="subText">My Trips</TextStyled>
           </StatsBoxStyled>
         </StatsContainerStyled>
 
