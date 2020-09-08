@@ -25,6 +25,7 @@ import {
   ButtonStyled,
   TextBackground,
   TripContainer,
+  TripContainer2,
   LowerBox,
 } from "./styles";
 import { AntDesign } from "@expo/vector-icons";
@@ -70,6 +71,7 @@ const TripDetail = ({ route, navigation }) => {
                     The city is dangerous .. stay away from it .. everything is
                     expensive .. and cops use people for shooting practice ..
                     stay home and watch Netflix!
+                    {trip.details}
                   </DetailText>
                 </TextBackground>
               </TextContainer>
@@ -77,13 +79,11 @@ const TripDetail = ({ route, navigation }) => {
           </SafeAreaView>
         </TripBackground>
         <TripContainer>
-          <LowerBox>
-            {authStore.user.id === trip.userId ? (
-              <Answer trip={trip} />
-            ) : (
-              <Question trip={trip} />
-            )}
-          </LowerBox>
+          {authStore.user.id === trip.userId ? (
+            <Answer trip={trip} />
+          ) : (
+            <Question trip={trip} />
+          )}
         </TripContainer>
       </ScrollView>
     </DetailContainer>

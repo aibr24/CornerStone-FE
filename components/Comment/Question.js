@@ -18,6 +18,7 @@ import {
   SubmitButtonStyled,
   QuestionView,
   CardBackground,
+  CardItemStyled,
 } from "./styles";
 
 const Question = ({ trip }) => {
@@ -32,39 +33,43 @@ const Question = ({ trip }) => {
   };
 
   return (
-    <View>
-      <CardBackground>
-        <CardItem>
-          <QuestionView>
-            <QuestionInput
-              placeholder="Ask a Question"
-              onChangeText={(question) => setComment({ ...comment, question })}
-            />
-            <SubmitButtonStyled mode="contained" onPress={handleSubmit}>
-              Submit Question
-            </SubmitButtonStyled>
-          </QuestionView>
-        </CardItem>
-        <FlatList
-          keyExtractor={(item) => item.id}
-          data={commentStore.comments.filter((item) => item.tripId === trip.id)}
-          renderItem={({ item }) => (
-            <View>
-              <Card>
-                <QuestionStyled>
-                  <QuestionTextStyled>
-                    Q : {"   " + item.question}
-                  </QuestionTextStyled>
-                </QuestionStyled>
-                <AnswerStyled>
-                  <AnswerTextStyled>A : {"   " + item.answer}</AnswerTextStyled>
-                </AnswerStyled>
-              </Card>
-            </View>
-          )}
-        />
-      </CardBackground>
-    </View>
+    <>
+      {/* <CardBackground> */}
+      <CardItemStyled>
+        <QuestionView>
+          <QuestionInput
+            placeholder="Ask a Question..."
+            onChangeText={(question) => setComment({ ...comment, question })}
+          />
+          <SubmitButtonStyled
+            mode="outlined"
+            placeholder="Submit Question"
+            onPress={handleSubmit}
+          >
+            <Text style={{ color: "#fff" }}>submit</Text>
+          </SubmitButtonStyled>
+        </QuestionView>
+      </CardItemStyled>
+      <FlatList
+        keyExtractor={(item) => item.id}
+        data={commentStore.comments.filter((item) => item.tripId === trip.id)}
+        renderItem={({ item }) => (
+          <View>
+            <Card>
+              <QuestionStyled>
+                <QuestionTextStyled>
+                  Q : {"   " + item.question}
+                </QuestionTextStyled>
+              </QuestionStyled>
+              <AnswerStyled>
+                <AnswerTextStyled>A : {"   " + item.answer}</AnswerTextStyled>
+              </AnswerStyled>
+            </Card>
+          </View>
+        )}
+      />
+      {/* </CardBackground> */}
+    </>
   );
 };
 

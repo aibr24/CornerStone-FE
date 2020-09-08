@@ -9,8 +9,8 @@ export const Background = styled.View`
   background: #4c525c;
 `;
 
-// 4c525c dark grey ish
 // New Style below
+// 4c525c dark grey ish
 
 export const DetailContainer = styled.View`
   flex: 1;
@@ -33,14 +33,14 @@ export const Back = styled.View`
 `;
 export const TitleText = styled.Text`
   color: #fff;
-  font-family: "AvenirNext-Regular";
   font-size: 32px;
   font-weight: 600;
 `;
+// font-family: "AvenirNext-Regular";
 export const DetailText = styled.Text`
   color: #fff;
-  font-family: "AvenirNext-Regular";
 `;
+// font-family: "AvenirNext-Regular";
 
 export const MainStyle = styled.View`
   padding: 0 32px;
@@ -63,16 +63,17 @@ export const ButtonStyled = styled.TouchableOpacity`
   background-color: rgba(255, 255, 255, 0.3);
 `;
 export const TextBackground = styled.View`
-  margin: 0 0 48px 32px;
+  margin: 1px
   background-color: rgba(0, 0, 0, 0.75);
-  border-radius: 10px;
+  border-bottom-left-radius: 25px;
+  border-top-right-radius: 25px;
   padding: 5px 10px 10px 10px;
 `;
 
 export const TripContainer = styled.View`
 margin-top: -24px
 padding: 10px;
-background-color: #fff;
+background-color: #393e46;
 border-top-left-radius: 24px;
 border-top-right-radius: 24px;
 `;

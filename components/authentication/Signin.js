@@ -27,7 +27,6 @@ function Signin({ navigation }) {
 
   const handleSubmit = async () => {
     await authStore.signin(user);
-    if (authStore.user) navigation.replace("MyTabs");
   };
   return (
     <AuthContainer>

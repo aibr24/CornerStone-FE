@@ -26,8 +26,10 @@ import tripStore from "../../stores/tripStore";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
 const Profile = ({ navigation }) => {
-  let profile = null;
-  if (authStore.user) profile = profileStore.getProfileById(authStore.user.id);
+  if (!authStore.user) navigation.replace("Signin");
+  // let profile = null;
+
+  const profile = profileStore.getProfileById(authStore.user.id);
 
   const listOfTrips = authStore.user
     ? tripStore.trips.filter((item) => item.userId === authStore.user.id)
