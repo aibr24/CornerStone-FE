@@ -22,13 +22,25 @@ const ProfileNav = () => {
         },
       }}
     >
-      <Stack.Screen name="OwnerProfile" component={OwnerProfile} />
+
       <Stack.Screen
-        name="Trips"
-        component={ProfileTripList}
+        name="OwnerProfile"
+        component={OwnerProfile}
+        options={({ route }) => {
+          const { profile } = route.params;
+          return {
+            title: profile.user.username,
+          };
+        }}
+      />
+      <Stack.Screen name="Trips" component={ProfileTripList} />
+      <Stack.Screen
+        name="Trip Detail"
+        component={TripDetail}
         options={{ headerShown: false }}
       />
-      <Stack.Screen name="Trip Detail" component={TripDetail} />
+
+
     </Stack.Navigator>
   );
 };
