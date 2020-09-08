@@ -2,7 +2,7 @@ import React from "react";
 
 // Navigators
 import { createStackNavigator } from "@react-navigation/stack";
-import ProfileTripList from "../ProfileTripList/TestIndex";
+import ProfileTripList from "../ProfileTripList";
 import OwnerProfile from "../OwnerProfile";
 import TripDetail from "../TripDetail";
 
