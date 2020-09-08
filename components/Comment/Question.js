@@ -34,7 +34,6 @@ const Question = ({ trip }) => {
 
   return (
     <>
-      {/* <CardBackground> */}
       <CardItemStyled>
         <QuestionView>
           <QuestionInput
@@ -68,7 +67,6 @@ const Question = ({ trip }) => {
           </View>
         )}
       />
-      {/* </CardBackground> */}
     </>
   );
 };

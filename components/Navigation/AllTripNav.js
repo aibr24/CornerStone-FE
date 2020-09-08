@@ -22,7 +22,6 @@ const ProfileNav = () => {
         },
       }}
     >
-
       <Stack.Screen
         name="OwnerProfile"
         component={OwnerProfile}
@@ -33,14 +32,16 @@ const ProfileNav = () => {
           };
         }}
       />
-      <Stack.Screen name="Trips" component={ProfileTripList} />
+      <Stack.Screen
+        name="Trips"
+        component={ProfileTripList}
+        options={{ headerShown: false }}
+      />
       <Stack.Screen
         name="Trip Detail"
         component={TripDetail}
         options={{ headerShown: false }}
       />
-
-
     </Stack.Navigator>
   );
 };

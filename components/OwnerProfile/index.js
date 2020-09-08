@@ -41,7 +41,6 @@ const OwnerProfile = ({ route }) => {
               }}
             ></ImageStyled>
           </ProfileImage>
-          <ActiveStyled></ActiveStyled>
         </View>
 
         <InfoContainer>
