@@ -1,5 +1,6 @@
 import styled from "styled-components/native";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import { Thumbnail } from "native-base";
 
 export const TripName = styled.Text`
   font-weight: bold;
@@ -79,4 +80,10 @@ border-top-right-radius: 24px;
 
 export const LowerBox = styled.View`
   margin-top: 16px;
+`;
+
+export const ProfileThum = styled(Thumbnail)`
+  border: solid;
+  border-width: 2;
+  border-color: #fff;
 `;

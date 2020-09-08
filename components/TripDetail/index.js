@@ -26,6 +26,7 @@ import {
   TextBackground,
   TripContainer,
   LowerBox,
+  ProfileThum,
 } from "./styles";
 import { AntDesign } from "@expo/vector-icons";
 //Stores
@@ -49,17 +50,31 @@ const TripDetail = ({ route, navigation }) => {
         <StatusBar barStyle="light-Content" />
         <TripBackground
           source={{
-            uri:
-              "https://d1bvpoagx8hqbg.cloudfront.net/originals/new-york-night-ca4bea1ac36526dcd0ea097c9424c763.jpg",
+            uri: trip.image
+              ? trip.image
+              : "https://media-cdn.tripadvisor.com/media/photo-s/0e/9a/e3/1d/freedom-tower.jpg",
           }}
         >
           <SafeAreaView>
             <MenuBar>
               <Back>
-                <AntDesign name="arrowleft" size={24} color="#FFF" />
-                <DetailText>Back</DetailText>
+                <TouchableOpacity onPress={navigation.goBack}>
+                  <AntDesign name="arrowleft" size={24} color="#FFF" />
+                </TouchableOpacity>
               </Back>
-              <AntDesign name="heart" size={24} color="#FFF" />
+              <TouchableOpacity
+                onPress={() =>
+                  navigation.navigate("OwnerProfile", { profile: profile })
+                }
+              >
+                <ProfileThum
+                  source={{
+                    uri: profile.image
+                      ? profile.image
+                      : "https://media-cdn.tripadvisor.com/media/photo-s/0e/9a/e3/1d/freedom-tower.jpg",
+                  }}
+                />
+              </TouchableOpacity>
             </MenuBar>
             <MainStyle>
               <TextContainer>
