@@ -17,6 +17,7 @@ import {
   StatsContainerStyled,
   StatsBoxStyled,
 } from "./styles";
+import Markdown from "react-native-easy-markdown";
 
 // Stores
 import profileStore from "../../stores/profileStore";
