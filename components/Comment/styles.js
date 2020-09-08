@@ -5,9 +5,13 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 
 export const TextTitle = styled.Text`
   font-weight: bold;
-  font-size: 20px;
+  margin-left: -235px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  font-size: 25px;
   text-align: center;
   justify-content: center;
+  color: #bbe1fa;
 `;
 export const QuestionInput = styled.TextInput`
   height: 35px;
@@ -18,6 +22,17 @@ export const QuestionInput = styled.TextInput`
   justify-content: center;
   margin-left: 20px;
   background-color: #fff;
+`;
+
+export const AnswerInput = styled.TextInput`
+  height: 55px;
+  width: 100%;
+  border-color: #bbe1fa;
+  border-width: 2px;
+  text-align: center;
+  justify-content: center;
+
+  background-color: rgba(100, 110, 150, 0.9);
 `;
 
 export const AnswerContainer = styled.View`
@@ -35,10 +50,12 @@ export const AnswerStyled = styled(CardItem)`
 
 export const QuestionTextStyled = styled.Text`
   font-weight: bold;
+  font-size: 20px;
   color: #bbe1fa;
 `;
 
 export const AnswerTextStyled = styled.Text`
+  font-size: 20px;
   color: #000;
 `;
 
