@@ -23,7 +23,7 @@ const MyTabs = () => {
         component={AllTripNav}
         options={{
           tabBarIcon: () => (
-            <EntypoIcon name="paper-plane" color="white" size={20} />
+            <EntypoIcon name="paper-plane" color="#bbe1fa" size={20} />
           ),
         }}
       />
@@ -34,7 +34,7 @@ const MyTabs = () => {
         options={{
           tabBarLabel: "Profile",
           tabBarIcon: () => (
-            <AntDesignIcon name="user" color="white" size={20} />
+            <AntDesignIcon name="user" color="#bbe1fa" size={20} />
           ),
         }}
       />

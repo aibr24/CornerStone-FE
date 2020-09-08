@@ -23,14 +23,14 @@ export const AuthTextInput = styled.TextInput`
   height: 40px;
   margin-bottom: 30px;
   color: #decdc3;
-  border-bottom-color: #32e0c4;
+  border-bottom-color: #bbe1fa;
   border-bottom-width: 1px;
 `;
 export const AuthButton = styled.TouchableOpacity`
   align-self: stretch;
   align-items: center;
   padding: 20px;
-  background-color: #32e0c4;
+  background-color: #bbe1fa;
   margin-top: 30px;
   border-radius: 7px;
 `;
@@ -41,6 +41,6 @@ export const AuthButtonText = styled.Text`
   font-size: 18px;
 `;
 export const AuthOther = styled.Text`
-  color: #eeeeee;
+  color: #bbe1fa;
   margin-top: 15px;
 `;
