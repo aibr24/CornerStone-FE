@@ -12,8 +12,22 @@ import {
 import { observer } from "mobx-react";
 
 //Styles
-import { TripName, Background } from "./styles";
-
+import {
+  MenuBar,
+  DetailContainer,
+  TripBackground,
+  Back,
+  DetailText,
+  MainStyle,
+  Divider,
+  TextContainer,
+  TitleText,
+  ButtonStyled,
+  TextBackground,
+  TripContainer,
+  LowerBox,
+} from "./styles";
+import { AntDesign } from "@expo/vector-icons";
 //Stores
 import profileStore from "../../stores/profileStore";
 import authStore from "../../stores/authStore";
@@ -22,60 +36,57 @@ import authStore from "../../stores/authStore";
 import Question from "../Comment/Question";
 import Answer from "../Comment/Answer";
 import { ScrollView } from "react-native-gesture-handler";
+import { StatusBar } from "expo-status-bar";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const TripDetail = ({ route, navigation }) => {
   const { trip } = route.params;
   const profile = profileStore.getProfileById(trip.userId);
 
   return (
-    <Background>
+    <DetailContainer>
       <ScrollView>
-        <Card>
-          <CardItem>
-            <Left>
-              <TouchableOpacity
-                onPress={() =>
-                  navigation.navigate("OwnerProfile", { profile: profile })
-                }
-              >
-                <Thumbnail
-                  source={{
-                    uri: profile.image
-                      ? profile.image
-                      : "https://media-cdn.tripadvisor.com/media/photo-s/0e/9a/e3/1d/freedom-tower.jpg",
-                  }}
-                />
-              </TouchableOpacity>
+        <StatusBar barStyle="light-Content" />
+        <TripBackground
+          source={{
+            uri:
+              "https://d1bvpoagx8hqbg.cloudfront.net/originals/new-york-night-ca4bea1ac36526dcd0ea097c9424c763.jpg",
+          }}
+        >
+          <SafeAreaView>
+            <MenuBar>
+              <Back>
+                <AntDesign name="arrowleft" size={24} color="#FFF" />
+                <DetailText>Back</DetailText>
+              </Back>
+              <AntDesign name="heart" size={24} color="#FFF" />
+            </MenuBar>
+            <MainStyle>
+              <TextContainer>
+                <TextBackground>
+                  <TitleText>Description</TitleText>
 
-              <Body>
-                <TripName>{trip.title}</TripName>
-              </Body>
-            </Left>
-          </CardItem>
-          <CardItem cardBody>
-            <Image
-              source={{
-                uri: trip.image
-                  ? trip.image
-                  : "https://media-cdn.tripadvisor.com/media/photo-s/0e/9a/e3/1d/freedom-tower.jpg",
-              }}
-              style={{ height: 200, width: null, flex: 1 }}
-            />
-          </CardItem>
-          <CardItem>
-            <Body>
-              <Text note>{trip.details}</Text>
-            </Body>
-          </CardItem>
-        </Card>
-
-        {authStore.user.id === trip.userId ? (
-          <Answer trip={trip} />
-        ) : (
-          <Question trip={trip} />
-        )}
+                  <DetailText>
+                    The city is dangerous .. stay away from it .. everything is
+                    expensive .. and cops use people for shooting practice ..
+                    stay home and watch Netflix!
+                  </DetailText>
+                </TextBackground>
+              </TextContainer>
+            </MainStyle>
+          </SafeAreaView>
+        </TripBackground>
+        <TripContainer>
+          <LowerBox>
+            {authStore.user.id === trip.userId ? (
+              <Answer trip={trip} />
+            ) : (
+              <Question trip={trip} />
+            )}
+          </LowerBox>
+        </TripContainer>
       </ScrollView>
-    </Background>
+    </DetailContainer>
   );
 };
 

@@ -1,4 +1,5 @@
 import styled from "styled-components/native";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 export const TripName = styled.Text`
   font-weight: bold;
@@ -9,3 +10,73 @@ export const Background = styled.View`
 `;
 
 // 4c525c dark grey ish
+// New Style below
+
+export const DetailContainer = styled.View`
+  flex: 1;
+  background-color: #fff;
+`;
+
+export const TripBackground = styled.ImageBackground`
+  width: 100%;
+`;
+
+export const MenuBar = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 16px;
+`;
+
+export const Back = styled.View`
+  flex-direction: row;
+  align-items: center;
+`;
+export const TitleText = styled.Text`
+  color: #fff;
+  font-family: "AvenirNext-Regular";
+  font-size: 32px;
+  font-weight: 600;
+`;
+export const DetailText = styled.Text`
+  color: #fff;
+  font-family: "AvenirNext-Regular";
+`;
+
+export const MainStyle = styled.View`
+  padding: 0 32px;
+  margin: 200px 0 32px 0;
+`;
+
+export const Divider = styled.View`
+  border-bottom-color: #fff;
+  border-bottom-width: 6px;
+  width: 150px;
+  margin: 8px 0;
+`;
+
+export const TextContainer = styled.View`
+  background: rgba(0, 0, 0, 0);
+`;
+
+export const ButtonStyled = styled.TouchableOpacity`
+  margin: 0 0 48px 32px;
+  background-color: rgba(255, 255, 255, 0.3);
+`;
+export const TextBackground = styled.View`
+  margin: 0 0 48px 32px;
+  background-color: rgba(0, 0, 0, 0.75);
+  border-radius: 10px;
+  padding: 5px 10px 10px 10px;
+`;
+
+export const TripContainer = styled.View`
+margin-top: -24px
+padding: 10px;
+background-color: #fff;
+border-top-left-radius: 24px;
+border-top-right-radius: 24px;
+`;
+
+export const LowerBox = styled.View`
+  margin-top: 16px;
+`;
