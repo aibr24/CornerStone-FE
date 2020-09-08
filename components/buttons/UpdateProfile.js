@@ -12,13 +12,14 @@ import {
   ImagePickerButton,
   ImagePickerText,
 } from "./styles";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { TouchableOpacity } from "react-native";
 
 // Stores
 import profileStore from "../../stores/profileStore";
 
 // Image Picker *idk what to name it*
 import * as ImagePicker from "expo-image-picker";
+import { Text } from "native-base";
 
 const UpdateProfile = ({ profile }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -89,6 +90,9 @@ const UpdateProfile = ({ profile }) => {
           <AddButtonStyled onPress={submitProfile}>
             <AddButtonText>Submit</AddButtonText>
           </AddButtonStyled>
+          <TouchableOpacity onPress={closeModal}>
+            <Text style={{ color: "#bbe1fa", marginTop: 30 }}>Cancel</Text>
+          </TouchableOpacity>
         </AddModalContainer>
       </Modal>
       <TouchableOpacity onPress={handleUpdate}>
