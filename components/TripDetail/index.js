@@ -81,13 +81,7 @@ const TripDetail = ({ route, navigation }) => {
               <TextContainer>
                 <TextBackground>
                   <TitleText>Description</TitleText>
-
-                  <DetailText>
-                    The city is dangerous .. stay away from it .. everything is
-                    expensive .. and cops use people for shooting practice ..
-                    stay home and watch Netflix!
-                    {trip.details}
-                  </DetailText>
+                  <DetailText>{trip.details}</DetailText>
                 </TextBackground>
               </TextContainer>
             </MainStyle>

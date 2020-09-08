@@ -3,8 +3,9 @@ import { observer } from "mobx-react";
 
 //Styles
 import AddTrip from "./AddTrip";
-import { Content, List } from "native-base";
+import { Content, List, View } from "native-base";
 
+import { ListContainer } from "./styles";
 //Components
 import TripItem from "./TripItem";
 
@@ -22,10 +23,12 @@ const TripList = ({ navigation }) => {
     : [];
 
   return (
-    <Content>
-      <List>{listOfTrips}</List>
-      <AddTrip />
-    </Content>
+    <View>
+      <ListContainer>
+        {listOfTrips}
+        <AddTrip />
+      </ListContainer>
+    </View>
   );
 };
 
