@@ -21,7 +21,12 @@ const SignoutButton = () => {
   return (
     <View>
       <TouchableOpacity onPress={handleSignout}>
-        <Icon name="log-out" size={20} />
+        <Icon
+          name="log-out"
+          size={20}
+          color="#fff"
+          style={{ paddingRight: 10 }}
+        />
       </TouchableOpacity>
     </View>
   );
