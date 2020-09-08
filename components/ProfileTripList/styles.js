@@ -30,7 +30,7 @@ export const BoxItemText = styled.Text`
 
 export const Container = styled.View`
   height: 30%;
-  background-color: #1b262c;
+  background-color: #393e46;
 `;
 
 export const DarkOVerlay = styled.View`

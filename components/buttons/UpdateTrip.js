@@ -4,7 +4,7 @@ import { View, Modal } from "react-native";
 //Libraries
 import * as Permissions from "expo-permissions";
 import * as ImagePicker from "expo-image-picker";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { TouchableOpacity } from "react-native";
 import Icon from "react-native-vector-icons/Feather";
 
 // Styles
@@ -19,6 +19,7 @@ import {
 
 // Stores
 import tripStore from "../../stores/tripStore";
+import { Text } from "native-base";
 
 const UpdateTrip = ({ trip }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -86,6 +87,9 @@ const UpdateTrip = ({ trip }) => {
           <AddButtonStyled onPress={submitTrip}>
             <AddButtonText>Submit</AddButtonText>
           </AddButtonStyled>
+          <TouchableOpacity onPress={closeModal}>
+            <Text style={{ color: "#bbe1fa", marginTop: 30 }}>Cancel</Text>
+          </TouchableOpacity>
         </AddModalContainer>
       </Modal>
       <TouchableOpacity onPress={handleUpdate}>

@@ -47,7 +47,7 @@ const TripDetail = ({ route, navigation }) => {
 
   return (
     <DetailContainer>
-      <ScrollView>
+      <ScrollView style={{ backgroundColor: "#393e46" }}>
         <StatusBar barStyle="light-Content" />
         <TripBackground
           source={{

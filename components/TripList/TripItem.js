@@ -38,8 +38,8 @@ const TripItem = ({ trip, navigation }) => {
         </Text>
       </Body>
       <FavoriteButton trip={trip} />
-      <DeleteButton trip={trip} />
       <UpdateTrip trip={trip} />
+      <DeleteButton trip={trip} style={{ color: "red" }} />
     </ListItem>
   );
 };
