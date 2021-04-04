@@ -1,9 +1,12 @@
-import { decorate, observable } from "mobx";
+import { makeAutoObservable } from "mobx";
 import instance from "./instance";
 
 class ProfileStore {
   profiles = [];
 
+  constructor() {
+    makeAutoObservable(this);
+  }
   getProfileById = (ownerId) =>
     this.profiles.find((profile) => profile.userId === ownerId);
 
@@ -28,10 +31,6 @@ class ProfileStore {
     }
   };
 }
-
-decorate(ProfileStore, {
-  profiles: observable,
-});
 
 const profileStore = new ProfileStore();
 profileStore.fetchProfiles();

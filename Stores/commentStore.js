@@ -1,9 +1,11 @@
-import { decorate, observable } from "mobx";
+import { makeAutoObservable } from "mobx";
 import instance from "./instance";
 
 class CommentStore {
   comments = [];
-
+  constructor() {
+    makeAutoObservable(this);
+  }
   fetchComments = async () => {
     try {
       const res = await instance.get("/comments");
@@ -49,10 +51,6 @@ class CommentStore {
     }
   };
 }
-
-decorate(CommentStore, {
-  comments: observable,
-});
 
 const commentStore = new CommentStore();
 commentStore.fetchComments();

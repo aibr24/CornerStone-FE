@@ -1,8 +1,12 @@
-import { decorate, observable } from "mobx";
+import { makeAutoObservable } from "mobx";
 import instance from "./instance";
 
 class TripStore {
   trips = [];
+
+  constructor() {
+    makeAutoObservable(this);
+  }
 
   fetchTrips = async () => {
     try {
@@ -41,10 +45,6 @@ class TripStore {
     }
   };
 }
-
-decorate(TripStore, {
-  trips: observable,
-});
 
 const tripStore = new TripStore();
 tripStore.fetchTrips();
